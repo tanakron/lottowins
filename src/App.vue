@@ -16,7 +16,7 @@ export default {
 }
 </style>
 <template>
-  <v-app id="app">
+  <v-app>
     <mains />
     <router-link></router-link>
   </v-app>
