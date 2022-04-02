@@ -17,7 +17,7 @@ export default {
 </style>
 <template>
   <v-app>
-    <mains />
+    <mains class="mt-3" />
     <router-link></router-link>
   </v-app>
 </template>
