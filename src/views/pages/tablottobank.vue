@@ -32,14 +32,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="item in desserts" :key="item.name">
+                      <tr v-for="item in desserts" :key="item">
+                        <th>
+                          <img
+                            :src="item.img"
+                            width="30"
+                            class="rounded-circle ml-3"
+                          />
+                          <span class="ml-3"> {{ item.namelottobank1 }}</span>
+                          <span> {{ item.namelottobank2 }}</span>
+                        </th>
+
                         <td>
-                          {{ item.name }}
-                          <v-chip color="pink" class="white--text">
-                            {{ item.date }}</v-chip
+                          <v-chip class="ma-2" color="success" outlined>
+                            {{ item.calories }}</v-chip
                           >
                         </td>
-                        <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
@@ -63,14 +71,16 @@ export default {
     return {
       desserts: [
         {
-          name: "หวยออมสิน",
+          namelottobank1: "หวยออมสิน",
           date: "16 เมษายน 2565 ",
-          calories: 159984,
+          calories: `159984`,
+          img: require("@/assets/imgs/aom.png"),
         },
         {
-          name: "หวย ธกส",
+          namelottobank2: "หวย ธกส",
           date: "16 เมษายน 2565",
-          calories: 237,
+          img: require("@/assets/imgs/tks.png"),
+          calories: `159984`,
         },
       ],
     };
