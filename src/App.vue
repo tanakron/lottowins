@@ -17,7 +17,7 @@ export default {
 </style>
 <template>
   <v-app>
-    <mains class="mt-3" />
+    <mains class="mt-3" v-if="$store.state.isLogged" />
     <router-link></router-link>
   </v-app>
 </template>
