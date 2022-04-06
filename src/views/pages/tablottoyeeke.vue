@@ -18,6 +18,7 @@
                 <div class="card-header info white--text">
                   <img src="@/assets/icons/lotto.png" /> ยี่กี
                 </div>
+                <Clock></Clock>
                 <v-card-title>
                   <v-avatar left class="green darken-4 ml-3 white--text">
                     {{ yekee.tab1 }}
@@ -50,6 +51,7 @@
                 <div class="card-header info white--text">
                   <img src="@/assets/icons/lotto.png" /> ยี่กี
                 </div>
+                <Clock></Clock>
                 <v-card-title>
                   <v-avatar left class="green darken-4 ml-3 white--text">
                     {{ yekee.tab2 }}
@@ -82,6 +84,7 @@
                 <div class="card-header info white--text">
                   <img src="@/assets/icons/lotto.png" /> ยี่กี
                 </div>
+                <Clock></Clock>
                 <v-card-title>
                   <v-avatar left class="green darken-4 ml-3 white--text">
                     {{ yekee.tab3 }}
@@ -114,6 +117,7 @@
                 <div class="card-header info white--text">
                   <img src="@/assets/icons/lotto.png" /> ยี่กี
                 </div>
+                <Clock></Clock>
                 <v-card-title>
                   <v-avatar left class="green darken-4 ml-3 white--text">
                     {{ yekee.tab4 }}
@@ -146,6 +150,7 @@
                 <div class="card-header info white--text">
                   <img src="@/assets/icons/lotto.png" /> ยี่กี
                 </div>
+                <Clock></Clock>
                 <v-card-title>
                   <v-avatar left class="green darken-4 ml-3 white--text">
                     {{ yekee.tab5 }}
@@ -172,11 +177,15 @@
 </template>
 
 <script>
+import Clock from "@/components/Clock.vue";
 export default {
   data() {
     return {
       tab: null,
     };
+  },
+  components: {
+    Clock,
   },
 };
 </script>

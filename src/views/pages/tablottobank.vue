@@ -9,7 +9,7 @@
               <template>
                 <v-card>
                   <v-card-title> </v-card-title>
-                  <h4 class="text-center">หวยรัฐบาลไทย</h4>
+                  <h4 class="text-center">หวยธนาคาร</h4>
                   <Clock></Clock>
                   <div class="container">
                     <div class="row">
@@ -22,12 +22,39 @@
                           รอบวันที่ 1 เมษายน 2565
                         </div>
                         <div class="card-body text-success">
-                          <h5 class="card-title">ผลการออกรางวัล</h5>
+                          <h5 class="card-title">ผลการออกรางวัล ออมสิน</h5>
                           <v-chip color="success">
                             <p class="card-text">970618</p></v-chip
                           >
                         </div>
                         <!-- //สามตัวหน้า -->
+                        <div class="card-body text-success">
+                          <h5 class="card-title">สามตัวหน้า</h5>
+                          <v-chip color="success" small>
+                            <p class="card-text">738</p></v-chip
+                          >
+
+                          <v-chip color="success" small>
+                            <p class="card-text">391</p></v-chip
+                          >
+                        </div>
+                        <!-- //สามตัวหลัง -->
+                        <div class="card-body text-success">
+                          <h5 class="card-title">สามตัวหลัง</h5>
+                          <v-chip color="success" small>
+                            <p class="card-text">578</p></v-chip
+                          >
+
+                          <v-chip color="success" small>
+                            <p class="card-text">870</p></v-chip
+                          >
+                        </div>
+                        <div class="card-body text-success">
+                          <h5 class="card-title">ผลการออกรางวัล ธกส</h5>
+                          <v-chip color="success">
+                            <p class="card-text">xxxxxx</p></v-chip
+                          >
+                        </div>
                         <div class="card-body text-success">
                           <h5 class="card-title">สามตัวหน้า</h5>
                           <v-chip color="success" small>

@@ -32,7 +32,10 @@
                     </thead>
                     <tbody>
                       <tr v-for="item in desserts" :key="item.name">
-                        <td>{{ item.calories }}</td>
+                        <td>
+                          <img :src="item.img" width="30" /> {{ item.name }}
+                          <Clock></Clock>
+                        </td>
                         <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
@@ -51,52 +54,91 @@
 </template>
 
 <script>
+import Clock from "@/components/Clock.vue";
 export default {
   data() {
     return {
       desserts: [
         {
-          name: "Frozen Yogurt",
+          name: "หุ้นเกาหลี",
           calories: 159,
+          img: require("@/assets/icons/southkorea.png"),
         },
         {
-          name: "Ice cream sandwich",
+          name: "นิเคอิรอบเช้า",
           calories: 237,
+          img: require("@/assets/icons/japan.png"),
         },
         {
-          name: "Eclair",
+          name: "นิเคอิรอบบ่าย",
           calories: 262,
+          img: require("@/assets/icons/japan.png"),
         },
         {
-          name: "Cupcake",
+          name: "ฮั่งเส็งรอบเช้า",
           calories: 305,
+          img: require("@/assets/icons/hongkong.png"),
         },
         {
-          name: "Gingerbread",
+          name: "ฮั่งเส็งรอบบ่าย",
           calories: 356,
+          img: require("@/assets/icons/hongkong.png"),
         },
         {
-          name: "Jelly bean",
+          name: "จีนรอบเช้า",
           calories: 375,
+          img: require("@/assets/icons/china.png"),
         },
         {
-          name: "Lollipop",
+          name: "จีนรอบบ่าย",
           calories: 392,
+          img: require("@/assets/icons/china.png"),
         },
         {
-          name: "Honeycomb",
+          name: "หุ้นไต้หวัน",
           calories: 408,
+          img: require("@/assets/icons/taiwan.png"),
         },
         {
-          name: "Donut",
+          name: "หุ้นสิงคโปร์",
           calories: 452,
+          img: require("@/assets/icons/singapore.png"),
         },
         {
-          name: "KitKat",
+          name: "หุ้นอียิปต์",
           calories: 518,
+          img: require("@/assets/icons/egypt.png"),
+        },
+        {
+          name: "หุ้นเยอรมัน",
+          calories: 518,
+          img: require("@/assets/icons/germany.png"),
+        },
+        {
+          name: "หุ้นอังกฤษ",
+          calories: 518,
+          img: require("@/assets/icons/england.png"),
+        },
+        {
+          name: "หุ้นรัสเซีย",
+          calories: 518,
+          img: require("@/assets/icons/russia.png"),
+        },
+        {
+          name: "หุ้นอินเดีย",
+          calories: 518,
+          img: require("@/assets/icons/india.png"),
+        },
+        {
+          name: "หุ้นดาวน์โจน",
+          calories: 518,
+          img: require("@/assets/icons/unitedstates.png"),
         },
       ],
     };
+  },
+  components: {
+    Clock,
   },
 };
 </script>
