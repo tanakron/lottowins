@@ -13,7 +13,7 @@
                   <Clock></Clock>
                   <div class="container">
                     <div class="row">
-                      <div class="card border-success">
+                      <div class="card border-success text-center">
                         <div class="card-header bg-transparent border-success">
                           <img
                             src="@/assets/icons/lotto.png"

@@ -31,21 +31,19 @@
               <div class="col">
                 <v-chip>เบอร์โทร</v-chip>
                 <v-form @submit.prevent="submit">
-                  <v-otp-input
-                    v-model="otp"
-                    :length="length"
-                    dark
-                    class="ma-2"
-                  ></v-otp-input>
+                  <v-text-field
+                    label="เบอร์โทร"
+                    single-line
+                    solo
+                    class="ma-4"
+                  ></v-text-field>
                 </v-form>
               </div>
             </div>
             <div class="modal-footer">
               <v-btn type="button" data-bs-dismiss="modal"> Close </v-btn>
               <v-col class="my-1">
-                <v-btn block :disabled="!isActive" type="submit"
-                  >ลงทะเบียน</v-btn
-                >
+                <v-btn type="submit" color="success"> ลงทะเบียน</v-btn>
               </v-col>
             </div>
           </div>
