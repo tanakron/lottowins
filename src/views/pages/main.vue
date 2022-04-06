@@ -1,10 +1,53 @@
 <template>
   <v-contianer>
+    <v-container>
+      <div class="d-flex justify-content-between">
+        <button
+          type="button"
+          class="btn btn-light px-5 text-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <img src="@/assets/imgs/click.gif" width="30" />
+          สมัครสมาชิก
+        </button>
+        <button
+          type="button"
+          class="btn btn-light px-5 text-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#registerModal"
+        >
+          <img src="@/assets/imgs/money-bag.gif" width="30" />
+          เข้าสู่ระบบ
+        </button>
+      </div>
+    </v-container>
+    <v-bottom-navigation color="teal accent-3" horizontal dark>
+      <v-btn>
+        <span>อัตราการจ่าย</span>
+
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>เข้าสู่ระบบ</span>
+
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>ติดต่อเรา</span>
+
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+
     <v-carousel hide-delimiters>
       <v-carousel-item
         v-for="(item, i) in items"
         :key="i"
         :src="item.src"
+        max-height="350"
       ></v-carousel-item>
     </v-carousel>
     <v-row>
@@ -143,30 +186,6 @@
       </div>
     </v-row>
 
-    <img />
-
-    <v-container>
-      <div class="d-flex justify-content-between">
-        <button
-          type="button"
-          class="btn btn-light px-5 text-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          <img src="@/assets/imgs/click.gif" width="30" />
-          สมัครสมาชิก
-        </button>
-        <button
-          type="button"
-          class="btn btn-light px-5 text-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#registerModal"
-        >
-          <img src="@/assets/imgs/money-bag.gif" width="30" />
-          เข้าสู่ระบบ
-        </button>
-      </div>
-    </v-container>
     <div class="container">
       <div class="row">
         <!-- หวยรัฐบาลไทย -->
@@ -213,6 +232,7 @@ export default {
   },
   data() {
     return {
+      value: 1,
       time: "",
       otp: "",
       length: 10,
