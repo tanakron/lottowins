@@ -8,10 +8,52 @@
             <v-card class="rounded-xl">
               <template>
                 <v-card>
-                  <v-card-title> <h3>หวยรัฐบาลไทย</h3> </v-card-title>
-
+                  <v-card-title> </v-card-title>
+                  <h4 class="text-center">หวยรัฐบาลไทย</h4>
+                  <Clock></Clock>
                   <div class="container">
-                    <div class="d-flex bd-highlight"></div>
+                    <div class="row">
+                      <div class="card border-success">
+                        <div class="card-header bg-transparent border-success">
+                          <img
+                            src="@/assets/icons/lotto.png"
+                            class="img-circle"
+                          />
+                          รอบวันที่ 1 เมษายน 2565
+                        </div>
+                        <div class="card-body text-success">
+                          <h5 class="card-title">ผลการออกรางวัล</h5>
+                          <v-chip color="success">
+                            <p class="card-text">970618</p></v-chip
+                          >
+                        </div>
+                        <!-- //สามตัวหน้า -->
+                        <div class="card-body text-success">
+                          <h5 class="card-title">สามตัวหน้า</h5>
+                          <v-chip color="success" small>
+                            <p class="card-text">738</p></v-chip
+                          >
+
+                          <v-chip color="success" small>
+                            <p class="card-text">391</p></v-chip
+                          >
+                        </div>
+                        <!-- //สามตัวหลัง -->
+                        <div class="card-body text-success">
+                          <h5 class="card-title">สามตัวหลัง</h5>
+                          <v-chip color="success" small>
+                            <p class="card-text">578</p></v-chip
+                          >
+
+                          <v-chip color="success" small>
+                            <p class="card-text">870</p></v-chip
+                          >
+                        </div>
+                        <div class="card-footer bg-transparent border-success">
+                          <p class="card-text">1 เมษายน 2565</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </v-card>
               </template>
@@ -24,11 +66,11 @@
 </template>
 
 <script>
+import Clock from "@/components/Clock.vue";
 export default {
   data() {
     return {
-      time: "",
-      desserts: [
+      lottothaiday: [
         {
           name: "16 มีนาคม 2565",
           lottothai: `607064`,
@@ -61,6 +103,9 @@ export default {
         },
       ],
     };
+  },
+  components: {
+    Clock,
   },
 };
 </script>

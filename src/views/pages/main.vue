@@ -168,9 +168,6 @@
           เข้าสู่ระบบ
         </button>
       </div>
-      <v-chip class="ma-3 light-blue darken-4 white--text" Default>
-        ประกาศผลรางวัล {{ time }}
-      </v-chip>
     </v-container>
     <div class="container">
       <div class="row">
@@ -207,11 +204,6 @@
 <script>
 import moment from "moment";
 export default {
-  mounted() {
-    setInterval(() => {
-      this.time = moment(Date()).format("h:mm:ss ");
-    }, 1000);
-  },
   methods: {
     submit() {
       this.$store.dispatch({
@@ -223,9 +215,10 @@ export default {
   },
   data() {
     return {
+      time: "",
       otp: "",
       length: 10,
-      time: "",
+
       first: "",
       account: {
         username: "",
@@ -258,6 +251,11 @@ export default {
     stocklottery: require("@/views/pages/tabstocklottery.vue").default,
     stockthailottery: require("@/views/pages/tabstockthailottery.vue").default,
     tablottoyeeke: require("@/views/pages/tablottoyeeke.vue").default,
+  },
+  mounted() {
+    setInterval(() => {
+      this.time = moment(Date()).format("h:mm:ss ");
+    }, 1000);
   },
 };
 </script>
