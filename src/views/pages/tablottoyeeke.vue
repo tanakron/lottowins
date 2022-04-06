@@ -1,7 +1,7 @@
 <template>
   <!-- หวยยี่กี -->
   <div>
-    <v-chip> <h3>ผลหวยยี่กี</h3></v-chip>
+    <v-chip> ผลหวยยี่กี </v-chip>
 
     <div class="grid">
       <div>
