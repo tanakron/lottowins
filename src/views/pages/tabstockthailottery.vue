@@ -4,16 +4,16 @@
       <!-- หวยรัฐ -->
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <v-card class="rounded-xl">
               <template>
                 <v-card>
                   <v-card-title> </v-card-title>
-                  <h4 class="text-center">หวย</h4>
+                  <h4 class="text-center">หวย ลาว</h4>
                   <Clock></Clock>
                   <div class="container">
                     <div class="row">
-                      <div class="card border-success">
+                      <div class="card border-success text-center">
                         <div class="card-header bg-transparent border-success">
                           <img
                             src="@/assets/icons/lotto.png"
@@ -21,26 +21,84 @@
                           />
                           รอบวันที่ 1 เมษายน 2565
                         </div>
+                        <span v-for="lotto in lottothaiday" :key="lotto">
+                          <img :src="lotto.imgloa" width="30" />
+                          {{ lotto.typeloa }}
+                        </span>
+
+                        <h5 class="card-title">ผลการออกรางวัล</h5>
+                        <p v-for="lotto in lottothaiday" :key="lotto">
+                          {{ lotto.lottothailoa }}
+                        </p>
+
+                        <div class="row">
+                          <div class="col-6">
+                            <h5 class="card-title">สามตัวบน</h5>
+                            <p v-for="lotto in lottothaiday" :key="lotto">
+                              {{ lotto.lottothaibet2uploa }}
+                            </p>
+                          </div>
+                          <div class="col-6">
+                            <h5 class="card-title">สองตัวล่าง</h5>
+                            <p v-for="lotto in lottothaiday" :key="lotto">
+                              {{ lotto.lottothaibet2downloa }}
+                            </p>
+                          </div>
+                        </div>
+
                         <div
-                          class="card-body text-success"
-                          v-for="lotto in lottothaiday"
-                          :key="lotto"
-                        >
-                          <img :src="lotto.img" width="30" />
-                          {{ lotto.type }}
-                          <h5 class="card-title">ผลการออกรางวัล</h5>
-
-                          <v-chip color="success">
-                            <p class="card-text">970618</p></v-chip
-                          >
-                          <!-- //สามตัวหน้า -->
+                          class="card-footer bg-transparent border-success"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </v-card>
+              </template>
+            </v-card>
+          </div>
+          <div class="col-md-6">
+            <v-card class="rounded-xl">
+              <template>
+                <v-card>
+                  <v-card-title> </v-card-title>
+                  <h4 class="text-center">หวย ฮานอย</h4>
+                  <Clock></Clock>
+                  <div class="container">
+                    <div class="row">
+                      <div class="card border-success text-center">
+                        <div class="card-header bg-transparent border-success">
+                          <img
+                            src="@/assets/icons/lotto.png"
+                            class="img-circle"
+                          />
+                          รอบวันที่ 1 เมษายน 2565
                         </div>
+                        <span v-for="lotto in lottothaiday" :key="lotto">
+                          <img :src="lotto.imghanoi" width="30" />
+                          {{ lotto.typehanoi }}
+                        </span>
 
-                        <!-- //สามตัวหลัง -->
-
-                        <div class="card-footer bg-transparent border-success">
-                          <p class="card-text">1 เมษายน 2565</p>
+                        <h5 class="card-title">ผลการออกรางวัล</h5>
+                        <p v-for="lotto in lottothaiday" :key="lotto">
+                          {{ lotto.lottothaihanoi }}
+                        </p>
+                        <div class="row">
+                          <div class="col-6">
+                            <h5 class="card-title">สองตัวบน</h5>
+                            <p v-for="lotto in lottothaiday" :key="lotto">
+                              {{ lotto.lottothaibet2uphanoi }}
+                            </p>
+                          </div>
+                          <div class="col-6">
+                            <h5 class="card-title">สองตัวล่าง</h5>
+                            <p v-for="lotto in lottothaiday" :key="lotto">
+                              {{ lotto.lottothaibet2downhanoi }}
+                            </p>
+                          </div>
                         </div>
+                        <div
+                          class="card-footer bg-transparent border-success"
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -61,41 +119,41 @@ export default {
     return {
       lottothaiday: [
         {
-          type: "หวยลาว",
-          img: require("@/assets/icons/laos.png"),
-          name: "16 มีนาคม 2565",
-          lottothai: `607064`,
-          lottothaibet2up: `18`,
-          lottothaibet2down: `08`,
-          lottothaibet3upp1: `333`,
-          lottothaibet3upp2: `350`,
-          lottothaibet3downp1: `573`,
-          lottothaibet3downp2: `606`,
+          typeloa: "หวยลาว",
+          imgloa: require("@/assets/icons/laos.png"),
+          nameloa: "16 มีนาคม 2565",
+          lottothailoa: `973124`,
+          lottothaibet2uploa: `24`,
+          lottothaibet2downloa: `08`,
+          lottothaibet3upp1loa: `124`,
+          lottothaibet3upp2loa: `350`,
+          lottothaibet3downp1loa: `573`,
+          lottothaibet3downp2loa: `606`,
         },
 
         {
-          type: "หวยฮานอย",
-          img: require("@/assets/icons/vietnam.png"),
-          name: "16 มีนาคม 2565",
-          lottothai: `607064`,
-          lottothaibet2up: `18`,
-          lottothaibet2down: `08`,
-          lottothaibet3upp1: `333`,
-          lottothaibet3upp2: `350`,
-          lottothaibet3downp1: `573`,
-          lottothaibet3downp2: `606`,
+          typehanoi: "หวยฮานอย",
+          imghanoi: require("@/assets/icons/vietnam.png"),
+          namehanoi: "16 มีนาคม 2565",
+          lottothaihanoi: `607064`,
+          lottothaibet2uphanoi: `18`,
+          lottothaibet2downhanoi: `08`,
+          lottothaibet3upp1hanoi: `333`,
+          lottothaibet3upp2hanoi: `350`,
+          lottothaibet3downp1hanoi: `573`,
+          lottothaibet3downp2hanoi: `606`,
         },
         {
-          type: "หวยฮานอย VIP",
-          img: require("@/assets/icons/vietnam.png"),
-          name: "16 มีนาคม 2565",
-          lottothai: `607064`,
-          lottothaibet2up: `18`,
-          lottothaibet2down: `08`,
-          lottothaibet3upp1: `333`,
-          lottothaibet3upp2: `350`,
-          lottothaibet3downp1: `573`,
-          lottothaibet3downp2: `606`,
+          typehanoivip: "หวยฮานอย VIP",
+          imghanoivip: require("@/assets/icons/vietnam.png"),
+          namehanoivip: "16 มีนาคม 2565",
+          lottothaihanoivip: `607064`,
+          lottothaibet2uphanoivip: `18`,
+          lottothaibet2downhanoivip: `08`,
+          lottothaibet3upp1hanoivip: `333`,
+          lottothaibet3upp2hanoivip: `350`,
+          lottothaibet3downp1hanoivip: `573`,
+          lottothaibet3downp2hanoivip: `606`,
         },
       ],
     };

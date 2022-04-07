@@ -31,33 +31,36 @@
                           >
                         </div>
                         <!-- //สามตัวหน้า -->
-                        <div class="card-body text-success">
-                          <h5 class="card-title">สามตัวหน้า</h5>
-                          <v-chip color="success" small>
-                            <p class="card-text">{{ datatabs.bet3up_1 }}</p>
-                          </v-chip>
+                        <div class="row">
+                          <div class="col-6">
+                            <h5 class="card-title">สามตัวหน้า</h5>
+                            <v-chip color="success" small>
+                              <p class="card-text">{{ datatabs.bet3up_1 }}</p>
+                            </v-chip>
+                            <v-chip color="success" small>
+                              <p class="card-text">
+                                {{ datatabs.bet3up_2 }}
+                              </p></v-chip
+                            >
+                          </div>
+                          <div class="col-6">
+                            <h5 class="card-title">สามตัวหลัง</h5>
+                            <v-chip color="success" small>
+                              <p class="card-text">
+                                {{ datatabs.bet3down_1 }}
+                              </p></v-chip
+                            >
 
-                          <v-chip color="success" small>
-                            <p class="card-text">
-                              {{ datatabs.bet3up_2 }}
-                            </p></v-chip
-                          >
+                            <v-chip color="success" small>
+                              <p class="card-text">
+                                {{ datatabs.bet3down_2 }}
+                              </p></v-chip
+                            >
+                          </div>
                         </div>
+                        <div class="card-body text-success"></div>
                         <!-- //สามตัวหลัง -->
-                        <div class="card-body text-success">
-                          <h5 class="card-title">สามตัวหลัง</h5>
-                          <v-chip color="success" small>
-                            <p class="card-text">
-                              {{ datatabs.bet3down_1 }}
-                            </p></v-chip
-                          >
 
-                          <v-chip color="success" small>
-                            <p class="card-text">
-                              {{ datatabs.bet3down_2 }}
-                            </p></v-chip
-                          >
-                        </div>
                         <div class="card-body text-success">
                           <h5 class="card-title">สองตัวล่าง</h5>
                           <v-chip color="success" small>

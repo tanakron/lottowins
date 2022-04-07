@@ -24,10 +24,9 @@
 
                       <tr>
                         <th>หวยหุ้นต่างประเทศ</th>
-                        <th class="text-left">2ตัวบน</th>
-                        <th class="text-left">2ตัวล่าง</th>
+
                         <th class="text-left">3ตัวบน</th>
-                        <th class="text-left">3ตัวล่าง</th>
+                        <th class="text-left">2ตัวล่าง</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -36,8 +35,6 @@
                           <img :src="item.img" width="30" /> {{ item.name }}
                           <Clock></Clock>
                         </td>
-                        <td>{{ item.calories }}</td>
-                        <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
                         <td>{{ item.calories }}</td>
                       </tr>
