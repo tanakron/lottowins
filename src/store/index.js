@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+import moment from "moment";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -14,7 +14,7 @@ export default new Vuex.Store({
     issLottoyeeke: true,
     //date lotto thai
     datelottothai: "1 เมษายน 2565",
-    datestocklottery: "04 เมษายน 2565",
+    datestocklottery: moment(new Date()).format("DD / MM / YYYY "),
     datestockthailottery: "04 เมษายน 2565",
 
     //ผลยี่กี

@@ -32,7 +32,7 @@
                             </p></v-chip
                           >
                         </div>
-                        <!-- //สามตัวหน้า -->
+
                         <div class="row">
                           <div class="col-6">
                             <h5 class="card-title">สามตัวบน</h5>
@@ -49,7 +49,9 @@
                             >
                           </div>
                         </div>
-                        <div class="card-body text-success"></div>
+                        <div class="card-body text-success">
+                          <v-divider></v-divider>
+                        </div>
                         <div>
                           <h5 class="card-title">
                             <img src="@/assets/imgs/tks.png" width="40" /> ธกส

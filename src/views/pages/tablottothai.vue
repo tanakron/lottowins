@@ -23,7 +23,13 @@
                           {{ datatabs.lottoday }}
                         </div>
                         <div class="card-body text-success">
-                          <h5 class="card-title">ผลการออกรางวัล</h5>
+                          <h5 class="card-title">
+                            <img
+                              src="@/assets/icons/lottothai.png"
+                              width="50"
+                            />
+                            ผลการออกรางวัล
+                          </h5>
                           <v-chip color="success">
                             <p class="card-text">
                               {{ datatabs.type_one }}
@@ -61,7 +67,8 @@
                         <div class="card-body text-success"></div>
                         <!-- //สามตัวหลัง -->
 
-                        <div class="card-body text-success">
+                        <div>
+                          <v-divider></v-divider>
                           <h5 class="card-title">สองตัวล่าง</h5>
                           <v-chip color="success" small>
                             <p class="card-text">
