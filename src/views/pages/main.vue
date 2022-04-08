@@ -30,7 +30,7 @@
       </v-btn>
 
       <v-btn>
-        <span>เข้าสู่ระบบ</span>
+        <span>กลุ่มหวย</span>
 
         <v-icon>mdi-heart</v-icon>
       </v-btn>

@@ -16,7 +16,16 @@ export default new Vuex.Store({
     datelottothai: "1 เมษายน 2565",
     datestocklottery: moment(new Date()).format("DD / MM / YYYY "),
     datestockthailottery: "04 เมษายน 2565",
-
+    //set time หวยหุ้น
+    stockset1: moment(new Date()).format("HH:mm"),
+    lottostocksum1: "11", // ออกผลหวย หุ้น
+    lottostocksum2: "22",
+    lottostocksum3: "33",
+    lottostocksum4: "44",
+    lottostocksum5: "55",
+    lottostocksum6: "66",
+    lottostocksum7: "77",
+    lottostocksum8: "88",
     //ผลยี่กี
     yeekeeall: [
       { tab: "1", content: "จับยี่กี รอบที่ 1" },
