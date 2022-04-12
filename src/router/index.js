@@ -47,6 +47,21 @@ const routes = [
     component: () => import("@/views/dashbord/playlottomain.vue"),
   },
   {
+    path: "/playlottomaindown",
+    name: "Playlottomain",
+    component: () => import("@/views/dashbord/playlottomaindown.vue"),
+  },
+  {
+    path: "/playlottomain1down",
+    name: "Playlottomain1",
+    component: () => import("@/views/dashbord/playlottomain1down.vue"),
+  },
+  {
+    path: "/playlottomain2down",
+    name: "Playlottomain2",
+    component: () => import("@/views/dashbord/playlottomain2down.vue"),
+  },
+  {
     path: "/mainuse",
     name: "Mainuse",
     component: () => import("@/views/dashbord/mainuse.vue"),

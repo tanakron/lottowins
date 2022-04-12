@@ -46,7 +46,7 @@
           <div class="container">
             <v-card
               class="d-flex justify-content-center ma-3 pa-1"
-              width="500"
+              width="550"
               height="auto"
               rounded
               elevation="4"
@@ -59,17 +59,18 @@
                 rounded
                 small
                 class="ma-2"
-                >3ตัว</v-btn
+              >
+                3ตัวบน</v-btn
               >
               <v-btn
-                @click.prevent="$router.back()"
+                @click.prevent="$router.push('/playlottomain2')"
                 color="primary"
                 elevation="4"
                 outlined
                 rounded
                 small
                 class="ma-2"
-                >2ตัว</v-btn
+                >2ตัวบน</v-btn
               >
               <v-btn
                 @click.prevent="$router.push('/playlottomain1')"
@@ -79,7 +80,38 @@
                 rounded
                 small
                 class="ma-2"
-                >เลขวิ่ง</v-btn
+                >เลขวิ่งบน</v-btn
+              >
+              <v-btn
+                @click.prevent="$router.push('/playlottomaindown')"
+                color="red"
+                elevation="4"
+                outlined
+                rounded
+                small
+                class="ma-2"
+              >
+                3ตัวล่าง</v-btn
+              >
+              <v-btn
+                @click.prevent="$router.push('/playlottomain2down')"
+                color="red"
+                elevation="4"
+                outlined
+                rounded
+                small
+                class="ma-2"
+                >2ตัวล่าง</v-btn
+              >
+              <v-btn
+                @click.prevent="$router.push('/playlottomain1down')"
+                color="red"
+                elevation="4"
+                outlined
+                rounded
+                small
+                class="ma-2"
+                >เลขวิ่งล่าง</v-btn
               >
             </v-card>
             <div class="row">
@@ -90,8 +122,25 @@
                   height="auto"
                   class="d-flex justify-content-center"
                 >
-                  <v-card width="500" height="400" dark>
+                  <v-card width="500" height="600" dark>
                     <v-form>
+                      <v-text-field
+                        label="จำนวนเงิน"
+                        value="00.00"
+                        prefix="฿"
+                        v-model="sum"
+                        v-on:keyup.enter="nextPlease"
+                      ></v-text-field>
+                      <keyboard
+                        scope
+                        v-model="sum"
+                        @custom="custom"
+                        @input="changed"
+                        :layouts="['1234567890{delete:backspace}']"
+                        :maxlength="10"
+                      ></keyboard>
+
+                      <v-chip close>ระบุตัวเลข</v-chip>
                       <v-otp-input
                         dark
                         length="2"
@@ -99,15 +148,15 @@
                         width="30"
                         class="ma-3"
                         v-model="input"
+                        v-on:keyup.enter="onEnter"
                       ></v-otp-input>
                       <keyboard
                         scope
-                        class="keyboard"
                         v-model="input"
                         @custom="custom"
                         @input="changed"
                         :layouts="['1234567890{delete:backspace}']"
-                        :maxlength="2"
+                        :maxlength="3"
                       ></keyboard>
                       <v-btn class="ma-2" outlined color="indigo">
                         ส่งโพย
@@ -126,8 +175,10 @@
               >
                 <v-form>
                   <v-card width="400" height="400" class="ma-6" dark>
-                    เลข2ตัว
-                    <v-chip color="red"> {{ input }}</v-chip>
+                    เลข3ตัว
+                    <v-chip color="red">
+                      จำนวนเงิน {{ sum }} บาท เลข {{ input }} บน
+                    </v-chip>
                   </v-card>
                 </v-form>
               </v-card>
@@ -152,6 +203,7 @@ export default {
       input: "",
       bet3: "",
       bet1: "",
+      sum: "",
       drawer: null,
       items: [
         { title: "จัดการโปรไฟล์", icon: "admin_panel_settings" },
@@ -185,7 +237,7 @@ export default {
 </script>
 
 <style>
-.keyboard {
+.keyboard2 {
   background: rgba(0, 255, 98, 0.459);
 }
 </style>
