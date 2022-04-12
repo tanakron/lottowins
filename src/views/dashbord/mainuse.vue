@@ -349,6 +349,123 @@
               </template>
             </v-card>
           </div>
+          <div class="col d-flex justify-center mb-6">
+            <v-card class="rounded-xl" width="500" height="400" dark>
+              <v-stepper-header class="">
+                <v-sheet
+                  class="mx-auto d-flex justify-center text-black"
+                  width="800"
+                  height="50"
+                  color="amber lighten-1"
+                  absolute
+                  left
+                  shaped
+                  top
+                >
+                  <img src="@/assets/imgs/003-lottery.png" width="60" />
+                  <strong class="ma-3"> ผลหวย ลาว</strong>
+                </v-sheet>
+              </v-stepper-header>
+              <template>
+                <v-simple-table>
+                  <template v-slot:default>
+                    <thead>
+                      <th></th>
+                      <th>งวดที่</th>
+                      <th>3ตัวบน</th>
+                      <th>2ตัวล่าง</th>
+                    </thead>
+                    <tbody>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นเกาหลี</td>
+                        <td>{{ item.row }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>นิเคอิรอบเช้า</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>นิเคอิรอบบ่าย</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>ฮั่งเส็งรอบเช้า</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>ฮั่งเส็งรอบบ่าย</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>จีนเช้า</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>จีนบ่าย</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นไต้หวัน</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นสิงคโปร์</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นอียิปต์</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นเยอรมัน</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นอังกฤษ</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นรัสเซีย</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                      <tr v-for="item in desserts" :key="item.name">
+                        <td>หุ้นอินเดีย</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                        <td>{{ item.bet3up }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
+              </template>
+            </v-card>
+          </div>
         </div>
       </div>
 

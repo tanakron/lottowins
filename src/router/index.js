@@ -17,6 +17,36 @@ const routes = [
     component: () => import("../views/About.vue"),
   },
   {
+    path: "/playlotto",
+    name: "Playlotto",
+    component: () => import("@/views/dashbord/playlotto.vue"),
+  },
+  {
+    path: "/playlottostock",
+    name: "Playlottostock",
+    component: () => import("@/views/dashbord/playlottostock.vue"),
+  },
+  {
+    path: "/playlottobank",
+    name: "Playlottobank",
+    component: () => import("@/views/dashbord/playlottobank.vue"),
+  },
+  {
+    path: "/playlottomain2",
+    name: "Playlottomain2",
+    component: () => import("@/views/dashbord/playlottomain2.vue"),
+  },
+  {
+    path: "/playlottomain1",
+    name: "Playlottomain1",
+    component: () => import("@/views/dashbord/playlottomain1.vue"),
+  },
+  {
+    path: "/playlottomain",
+    name: "Playlottomain",
+    component: () => import("@/views/dashbord/playlottomain.vue"),
+  },
+  {
     path: "/mainuse",
     name: "Mainuse",
     component: () => import("@/views/dashbord/mainuse.vue"),

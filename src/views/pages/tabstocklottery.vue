@@ -269,7 +269,7 @@ export default {
                                     {{ stockset1.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum1up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -288,7 +288,7 @@ export default {
                                     {{ stockset2.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum2up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -307,7 +307,7 @@ export default {
                                     {{ stockset3.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum3up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -327,7 +327,7 @@ export default {
                                     {{ stockset4.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum4up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -346,7 +346,7 @@ export default {
                                     {{ stockset5.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum5up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -365,7 +365,7 @@ export default {
                                     {{ stockset6.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum6up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -384,7 +384,7 @@ export default {
                                     {{ stockset7.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum7up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -404,7 +404,7 @@ export default {
                                     {{ stockset8.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum8up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -423,7 +423,7 @@ export default {
                                     {{ stockset9.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{ $store.state.lottostocksum9up3 || "รอผล" }}
                                 </td>
                                 <td>
@@ -442,7 +442,7 @@ export default {
                                     {{ stockset10.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum10up3 || "รอผล"
                                   }}
@@ -463,7 +463,7 @@ export default {
                                     {{ stockset11.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum11up3 || "รอผล"
                                   }}
@@ -485,7 +485,7 @@ export default {
                                     {{ stockset12.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum12up3 || "รอผล"
                                   }}
@@ -507,7 +507,7 @@ export default {
                                     {{ stockset13.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum13up3 || "รอผล"
                                   }}
@@ -529,7 +529,7 @@ export default {
                                     {{ stockset14.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum14up3 || "รอผล"
                                   }}
@@ -550,7 +550,7 @@ export default {
                                     {{ stockset15.dateend }}</v-chip
                                   >
                                 </th>
-                                <td>
+                                <td height="60">
                                   {{
                                     $store.state.lottostocksum15up3 || "รอผล"
                                   }}

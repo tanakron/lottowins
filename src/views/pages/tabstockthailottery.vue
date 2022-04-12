@@ -24,7 +24,7 @@
                       </tr>
                     </thead>
                     <tr v-for="typeloa in lottoloa" :key="typeloa.index">
-                      <td>
+                      <td height="60">
                         {{ typeloa.nameloa }}
                       </td>
                       <td>
@@ -45,7 +45,8 @@
                 <v-card-title> </v-card-title>
                 <h4 class="text-center">
                   <span v-for="imghanois in lottohanoi" :key="imghanois.index">
-                    <img :src="imghanois.imghanoi" width="30" /> หวย ฮานอย</span
+                    <img :src="imghanois.imghanoi" width="30" /> หวย
+                    เวียดนาม</span
                   >
                 </h4>
                 <h4 class="text-center"></h4>
@@ -53,20 +54,35 @@
                   <thead>
                     <tr>
                       <th scope="col">วันที่</th>
-
+                      <th>หวย</th>
                       <th scope="col">3ตัวบน</th>
                       <th scope="col">2ตัวล่าง</th>
                     </tr>
                   </thead>
-                  <tr v-for="typeloa in lottoloa" :key="typeloa.id">
+                  <tr v-for="typeloa in lottohanoi" :key="typeloa.index">
+                    <td height="60">
+                      {{ typeloa.namehanoi }}
+                    </td>
+                    <td>{{ typeloa.typehanoi }}</td>
                     <td>
-                      {{ typeloa.nameloa }}
+                      {{ typeloa.lottothaibet2downhanoi || "รอผล" }}
                     </td>
                     <td>
-                      {{ typeloa.lottothaibet2uploa || "รอผล" }}
+                      {{ typeloa.lottothaibet3downp2hanoi || "รอผล" }}
+                    </td>
+                  </tr>
+                  <tr v-for="typeloa in lottonanoivip" :key="typeloa.id">
+                    <td height="60">
+                      {{ typeloa.namehanoivip }}
                     </td>
                     <td>
-                      {{ typeloa.lottothaibet2uploa || "รอผล" }}
+                      {{ typeloa.typehanoivip }}
+                    </td>
+                    <td>
+                      {{ typeloa.lottothaibet3upp1hanoivip || "รอผล" }}
+                    </td>
+                    <td>
+                      {{ typeloa.lottothaibet2downhanoivip || "รอผล" }}
                     </td>
                   </tr>
                 </table>
@@ -111,12 +127,8 @@ export default {
           imghanoivip: require("@/assets/icons/vietnam.png"),
           namehanoivip: "16 มีนาคม 2565",
           lottothaihanoivip: `607064`,
-          lottothaibet2uphanoivip: `18`,
           lottothaibet2downhanoivip: `08`,
           lottothaibet3upp1hanoivip: `333`,
-          lottothaibet3upp2hanoivip: `350`,
-          lottothaibet3downp1hanoivip: `573`,
-          lottothaibet3downp2hanoivip: `606`,
         },
       ],
 
