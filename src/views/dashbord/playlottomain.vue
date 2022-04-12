@@ -52,14 +52,15 @@
               elevation="4"
             >
               <v-btn
-                @click.prevent="$router.push('/playlottomain')"
+                @click.prevent="$router.back()"
                 color="primary"
                 elevation="4"
                 outlined
                 rounded
                 small
                 class="ma-2"
-                >3ตัว</v-btn
+              >
+                3ตัว</v-btn
               >
               <v-btn
                 @click.prevent="$router.push('/playlottomain2')"
@@ -92,7 +93,6 @@
                 >
                   <v-card width="500" height="400" dark>
                     <v-form>
-                      {{ input }}
                       <v-otp-input
                         dark
                         length="3"
@@ -102,13 +102,17 @@
                         v-model="input"
                       ></v-otp-input>
                       <keyboard
+                        scope
+                        class="keyboard"
                         v-model="input"
                         @custom="custom"
                         @input="changed"
                         :layouts="['1234567890{delete:backspace}']"
                         :maxlength="3"
                       ></keyboard>
-                      <v-btn class="ma-2" outlined color="indigo"> ส่ง </v-btn>
+                      <v-btn class="ma-2" outlined color="indigo">
+                        ส่งโพย
+                      </v-btn>
                     </v-form>
                   </v-card>
                   <!---->
@@ -123,7 +127,7 @@
               >
                 <v-form>
                   <v-card width="400" height="400" class="ma-6" dark>
-                    เลข2ตัว <v-chip color="red">{{ bet3 }}</v-chip>
+                    เลข3ตัว <v-chip color="red"> {{ input }}</v-chip>
                   </v-card>
                 </v-form>
               </v-card>
@@ -180,4 +184,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.keyboard {
+  background: rgba(0, 255, 98, 0.459);
+}
+</style>

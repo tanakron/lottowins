@@ -62,7 +62,7 @@
                 >3ตัว</v-btn
               >
               <v-btn
-                @click.prevent="$router.push('/playlottomain2')"
+                @click.prevent="$router.back()"
                 color="primary"
                 elevation="4"
                 outlined
@@ -90,7 +90,7 @@
                   height="auto"
                   class="d-flex justify-content-center"
                 >
-                  <v-card width="400" height="400" dark>
+                  <v-card width="500" height="400" dark>
                     <v-form>
                       <v-otp-input
                         dark
@@ -98,209 +98,20 @@
                         height="30"
                         width="30"
                         class="ma-3"
-                        v-model="bet3"
+                        v-model="input"
                       ></v-otp-input>
-                      <v-btn class="ma-2" outlined color="indigo"> ส่ง </v-btn>
-
-                      <div class="row no-gutters">
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-1 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-2 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-3 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-4 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-5 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-6 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-7 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-8 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-9 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            disabled="disabled"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--disabled v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-keyboard-close theme--dark"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-numeric-0 theme--dark"
-                                style="font-size: 40px"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-4">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined v-btn--rounded theme--dark v-size--default v-size--large"
-                          >
-                            <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mdi mdi-backspace theme--dark"
-                              ></i
-                            ></span>
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-6">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--contained v-btn--disabled v-btn--rounded theme--dark v-size--large"
-                            disabled="disabled"
-                          >
-                            <!-- <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mr-2 mdi mdi-arrow-collapse-left theme--dark"
-                              ></i>
-                              ยกเลิกล่าสุด
-                            </span> -->
-                          </button>
-                        </div>
-                        <div class="pa-1 col col-6">
-                          <button
-                            type="button"
-                            class="disable-double-tab-zoom v-btn v-btn--block v-btn--contained v-btn--disabled v-btn--rounded theme--dark v-size--large"
-                            disabled="disabled"
-                          >
-                            <!-- <span class="v-btn__content"
-                              ><i
-                                aria-hidden="true"
-                                class="v-icon notranslate mr-2 mdi mdi-trash-can-outline theme--dark"
-                              ></i>
-                              ล้างทั้งหมด
-                            </span> -->
-                          </button>
-                        </div>
-                      </div>
+                      <keyboard
+                        scope
+                        class="keyboard"
+                        v-model="input"
+                        @custom="custom"
+                        @input="changed"
+                        :layouts="['1234567890{delete:backspace}']"
+                        :maxlength="2"
+                      ></keyboard>
+                      <v-btn class="ma-2" outlined color="indigo">
+                        ส่งโพย
+                      </v-btn>
                     </v-form>
                   </v-card>
                   <!---->
@@ -315,7 +126,8 @@
               >
                 <v-form>
                   <v-card width="400" height="400" class="ma-6" dark>
-                    เลข2ตัว <v-chip color="red">{{ bet3 }}</v-chip>
+                    เลข2ตัว
+                    <v-chip color="red"> {{ input }}</v-chip>
                   </v-card>
                 </v-form>
               </v-card>
@@ -332,11 +144,12 @@
 </template>
 
 <script>
+import keyboard from "vue-keyboard";
 export default {
   data() {
     return {
       tab: null,
-
+      input: "",
       bet3: "",
       bet1: "",
       drawer: null,
@@ -358,8 +171,21 @@ export default {
       ],
     };
   },
-  components: {},
+  components: { keyboard },
+  methods: {
+    changed(value) {
+      console.log("Value " + value);
+    },
+
+    custom(keyboard) {
+      console.log(keyboard.value);
+    },
+  },
 };
 </script>
 
-<style></style>
+<style>
+.keyboard {
+  background: rgba(0, 255, 98, 0.459);
+}
+</style>
