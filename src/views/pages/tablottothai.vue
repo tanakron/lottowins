@@ -5,86 +5,81 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <v-card class="rounded-xl">
-              <template>
-                <v-card v-for="datatabs in datatab" :key="datatabs">
-                  <v-card-title> </v-card-title>
-                  <h4 class="text-center">หวยรัฐบาลไทย</h4>
-                  <Clock></Clock>
+            <v-card
+              v-for="datatabs in datatab"
+              :key="datatabs.index"
+              dark
+              class="rounded-xl"
+            >
+              <v-card-title> </v-card-title>
+              <h4 class="text-center">หวยรัฐบาลไทย</h4>
 
-                  <div class="container">
+              <div class="container">
+                <div class="row">
+                  <div class="card border-success text-center text-success">
+                    <div class="card-header bg-transparent border-success">
+                      <img src="@/assets/icons/lotto.png" class="img-circle" />
+                      {{ datatabs.lottoday }}
+                    </div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">
+                        <img src="@/assets/icons/lottothai.png" width="50" />
+                        ผลการออกรางวัล
+                      </h5>
+                      <v-chip color="success">
+                        <p class="card-text">
+                          {{ datatabs.type_one }}
+                        </p></v-chip
+                      >
+                    </div>
+                    <!-- //สามตัวหน้า -->
                     <div class="row">
-                      <div class="card border-success text-center">
-                        <div class="card-header bg-transparent border-success">
-                          <img
-                            src="@/assets/icons/lotto.png"
-                            class="img-circle"
-                          />
-                          {{ datatabs.lottoday }}
-                        </div>
-                        <div class="card-body text-success">
-                          <h5 class="card-title">
-                            <img
-                              src="@/assets/icons/lottothai.png"
-                              width="50"
-                            />
-                            ผลการออกรางวัล
-                          </h5>
-                          <v-chip color="success">
-                            <p class="card-text">
-                              {{ datatabs.type_one }}
-                            </p></v-chip
-                          >
-                        </div>
-                        <!-- //สามตัวหน้า -->
-                        <div class="row">
-                          <div class="col-6">
-                            <h5 class="card-title">สามตัวหน้า</h5>
-                            <v-chip color="success" small>
-                              <p class="card-text">{{ datatabs.bet3up_1 }}</p>
-                            </v-chip>
-                            <v-chip color="success" small>
-                              <p class="card-text">
-                                {{ datatabs.bet3up_2 }}
-                              </p></v-chip
-                            >
-                          </div>
-                          <div class="col-6">
-                            <h5 class="card-title">สามตัวหลัง</h5>
-                            <v-chip color="success" small>
-                              <p class="card-text">
-                                {{ datatabs.bet3down_1 }}
-                              </p></v-chip
-                            >
+                      <div class="col-6">
+                        <h5 class="card-title text-success">สามตัวหน้า</h5>
+                        <v-chip color="success" small>
+                          <p class="card-text">{{ datatabs.bet3up_1 }}</p>
+                        </v-chip>
+                        <v-chip color="success" small>
+                          <p class="card-text">
+                            {{ datatabs.bet3up_2 }}
+                          </p></v-chip
+                        >
+                      </div>
+                      <div class="col-6">
+                        <h5 class="card-title text-success">สามตัวหลัง</h5>
+                        <v-chip color="success" small>
+                          <p class="card-text">
+                            {{ datatabs.bet3down_1 }}
+                          </p></v-chip
+                        >
 
-                            <v-chip color="success" small>
-                              <p class="card-text">
-                                {{ datatabs.bet3down_2 }}
-                              </p></v-chip
-                            >
-                          </div>
-                        </div>
-                        <div class="card-body text-success"></div>
-                        <!-- //สามตัวหลัง -->
-
-                        <div>
-                          <v-divider></v-divider>
-                          <h5 class="card-title">สองตัวล่าง</h5>
-                          <v-chip color="success" small>
-                            <p class="card-text">
-                              {{ datatabs.bet2down }}
-                            </p></v-chip
-                          >
-                        </div>
-                        <div
-                          class="card-footer bg-transparent border-success"
-                        ></div>
+                        <v-chip color="success" small>
+                          <p class="card-text">
+                            {{ datatabs.bet3down_2 }}
+                          </p></v-chip
+                        >
                       </div>
                     </div>
+
+                    <!-- //สามตัวหลัง -->
+
+                    <div>
+                      <v-divider></v-divider>
+                      <h5 class="card-title text-success">สองตัวล่าง</h5>
+                      <v-chip color="success" small>
+                        <p class="card-text">
+                          {{ datatabs.bet2down }}
+                        </p></v-chip
+                      >
+                    </div>
+                    <div
+                      class="card-footer bg-transparent border-success"
+                    ></div>
                   </div>
-                </v-card>
-              </template>
+                </div>
+              </div>
             </v-card>
+            <v-card class="rounded-xl"> </v-card>
           </div>
         </div>
       </div>
@@ -93,7 +88,7 @@
 </template>
 
 <script>
-import Clock from "@/components/Clock.vue";
+// import Clock from "@/components/Clock.vue";
 // import Counttime from "@/components/Counttime.vue";
 export default {
   data() {
@@ -134,7 +129,7 @@ export default {
     };
   },
   components: {
-    Clock,
+    // Clock,
   },
   mounted() {
     fetch("http://localhost:3000/lottothaiset/setday")

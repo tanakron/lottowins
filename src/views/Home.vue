@@ -1,9 +1,13 @@
 <template>
-  <div class="home"></div>
+  <div></div>
+  <!-- <layout></layout> -->
 </template>
-
+<style></style>
 <script>
-// @ is an alias to /src
-
-export default {};
+// import Layout from "../components/layout.vue";
+export default {
+  components: {
+    // Layout,
+  },
+};
 </script>

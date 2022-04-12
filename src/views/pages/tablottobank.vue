@@ -5,17 +5,18 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <v-card class="rounded-xl">
+            <v-card class="rounded-xl" dark>
               <template>
-                <v-card v-for="datatabs in datatab" :key="datatabs">
+                <v-card v-for="datatabs in datatab" :key="datatabs.index">
                   <v-card-title> </v-card-title>
                   <h4 class="text-center">หวยธนาคาร</h4>
-                  <Clock></Clock>
 
                   <div class="container">
                     <div class="row">
                       <div class="card border-success text-center">
-                        <div class="card-header bg-transparent border-success">
+                        <div
+                          class="card-header bg-transparent border-success text-success"
+                        >
                           <img
                             src="@/assets/icons/lotto.png"
                             class="img-circle"
@@ -35,13 +36,13 @@
 
                         <div class="row">
                           <div class="col-6">
-                            <h5 class="card-title">สามตัวบน</h5>
+                            <h5 class="card-title text-success">สามตัวบน</h5>
                             <v-chip color="success" small>
                               <p class="card-text">{{ datatabs.bet3up_1 }}</p>
                             </v-chip>
                           </div>
                           <div class="col-6">
-                            <h5 class="card-title">สองตัวล่าง</h5>
+                            <h5 class="card-title text-success">สองตัวล่าง</h5>
                             <v-chip color="success" small>
                               <p class="card-text">
                                 {{ datatabs.bet3down_1 }}
@@ -53,7 +54,7 @@
                           <v-divider></v-divider>
                         </div>
                         <div>
-                          <h5 class="card-title">
+                          <h5 class="card-title text-success">
                             <img src="@/assets/imgs/tks.png" width="40" /> ธกส
                           </h5>
                           <v-chip color="success">
@@ -63,13 +64,15 @@
                           >
                           <div class="row">
                             <div class="col-6">
-                              <h5 class="card-title">สามตัวบน</h5>
+                              <h5 class="card-title text-success">สามตัวบน</h5>
                               <v-chip color="success" small>
                                 <p class="card-text">{{ datatabs.bet3up_1 }}</p>
                               </v-chip>
                             </div>
                             <div class="col-6">
-                              <h5 class="card-title">สองตัวล่าง</h5>
+                              <h5 class="card-title text-success">
+                                สองตัวล่าง
+                              </h5>
                               <v-chip color="success" small>
                                 <p class="card-text">
                                   {{ datatabs.bet3down_1 }}
@@ -95,7 +98,7 @@
 </template>
 
 <script>
-import Clock from "@/components/Clock.vue";
+// import Clock from "@/components/Clock.vue";
 // import Counttime from "@/components/Counttime.vue";
 export default {
   data() {
@@ -136,7 +139,7 @@ export default {
     };
   },
   components: {
-    Clock,
+    // Clock,
   },
   mounted() {
     fetch("http://localhost:3000/lottothaiset/setday")

@@ -1,13 +1,30 @@
+<template>
+  <v-app>
+    <!-- <v-app-bar app></v-app-bar> -->
+    <v-main>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer app dark>
+      <v-col class="text-center" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Lottowins</strong>
+      </v-col>
+    </v-footer>
+  </v-app>
+</template>
+
 <script>
+// import layout from "./components/layout.vue";
+// import Headers from "@/components/headers.vue";
+
 export default {
-  data() {
-    return {};
-  },
-  components: {
-    mains: require("@/views/pages/main.vue").default,
-  },
+  components: {},
+  name: "app",
 };
 </script>
+
 <style>
 #app {
   font-family: "Kanit", sans-serif;
@@ -16,9 +33,3 @@ export default {
   background: linear-gradient(to right, #141010, #05e04e, #000000);
 }
 </style>
-<template>
-  <v-app>
-    <mains class="mt-3" v-if="$store.state.isLogged" />
-    <router-link></router-link>
-  </v-app>
-</template>

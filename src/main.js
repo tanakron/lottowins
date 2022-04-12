@@ -1,11 +1,14 @@
 import Vue from "vue";
 import App from "./App.vue";
+
 import vuetify from "./plugins/vuetify";
 import router from "./router";
 import Vuetify from "vuetify/lib";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 import store from "./store";
 
+import Header from "./components/headers.vue";
+Vue.component("app-header", Header);
 Vue.config.productionTip = false;
 
 export default new Vuetify({
