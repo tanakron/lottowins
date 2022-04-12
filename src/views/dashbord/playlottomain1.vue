@@ -46,7 +46,7 @@
           <div class="container">
             <v-card
               class="d-flex justify-content-center ma-3 pa-1"
-              width="auto"
+              width="500"
               height="auto"
               rounded
               elevation="4"
@@ -90,7 +90,7 @@
                   height="auto"
                   class="d-flex justify-content-center"
                 >
-                  <v-card width="400" height="400" dark>
+                  <v-card width="auto" height="400" dark>
                     <v-form>
                       <v-otp-input
                         dark
@@ -306,34 +306,19 @@
                   <!---->
                 </v-card>
               </div>
-              <div class="col-md-3">
-                <v-card
-                  dark
-                  width="auto"
-                  height="auto"
-                  class="d-flex justify-content-center"
-                >
-                  <v-form>
-                    <v-card width="400" height="400" class="ma-6" dark>
-                      เลข1ตัว <v-chip color="red">{{ bet3 }}</v-chip>
-                    </v-card>
-                  </v-form>
-                </v-card>
-              </div>
-              <div class="col-md-3">
-                <v-card
-                  dark
-                  width="auto"
-                  height="auto"
-                  class="d-flex justify-content-center"
-                >
-                  <v-form>
-                    <v-card width="400" height="400" class="ma-6" dark>
-                      <v-chip color="red">{{ bet3 }}</v-chip>
-                    </v-card>
-                  </v-form>
-                </v-card>
-              </div>
+
+              <v-card
+                dark
+                width="auto"
+                height="auto"
+                class="d-flex justify-content-center"
+              >
+                <v-form>
+                  <v-card width="400" height="400" class="ma-6" dark>
+                    เลข2ตัว <v-chip color="red">{{ bet3 }}</v-chip>
+                  </v-card>
+                </v-form>
+              </v-card>
             </div>
           </div>
         </div>
