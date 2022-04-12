@@ -44,76 +44,73 @@
       <div class="container">
         <div class="col-md-12">
           <div class="container">
-            <v-card
-              class="d-flex justify-content-center ma-3 pa-1"
-              width="550"
-              height="auto"
-              rounded
-              elevation="4"
-            >
-              <v-btn
-                @click.prevent="$router.push('/playlottomain')"
-                color="primary"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-              >
-                3ตัวบน</v-btn
-              >
-              <v-btn
-                @click.prevent="$router.push('/playlottomain2')"
-                color="primary"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-                >2ตัวบน</v-btn
-              >
-              <v-btn
-                @click.prevent="$router.push('/playlottomain1')"
-                color="primary"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-                >เลขวิ่งบน</v-btn
-              >
-              <v-btn
-                @click.prevent="$router.push('/playlottomaindown')"
-                color="red"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-              >
-                3ตัวล่าง</v-btn
-              >
-              <v-btn
-                @click.prevent="$router.push('/playlottomain2down')"
-                color="red"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-                >2ตัวล่าง</v-btn
-              >
-              <v-btn
-                @click.prevent="$router.push('/playlottomain1down')"
-                color="red"
-                elevation="4"
-                outlined
-                rounded
-                small
-                class="ma-2"
-                >เลขวิ่งล่าง</v-btn
-              >
-            </v-card>
+            <v-row>
+              <v-card class="justify-content-center ma-3" rounded elevation="4">
+                <v-btn
+                  @click.prevent="$router.push('/playlottomain')"
+                  color="primary"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                >
+                  3ตัวบน</v-btn
+                >
+                <v-btn
+                  @click.prevent="$router.push('/playlottomain2')"
+                  color="primary"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                  >2ตัวบน</v-btn
+                >
+                <v-btn
+                  @click.prevent="$router.push('/playlottomain1')"
+                  color="primary"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                  >เลขวิ่งบน</v-btn
+                >
+
+                <v-btn
+                  @click.prevent="$router.push('/playlottomaindown')"
+                  color="red"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                >
+                  3ตัวล่าง</v-btn
+                >
+                <v-btn
+                  @click.prevent="$router.push('/playlottomain2down')"
+                  color="red"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                  >2ตัวล่าง</v-btn
+                >
+                <v-btn
+                  @click.prevent="$router.push('/playlottomain1down')"
+                  color="red"
+                  elevation="4"
+                  outlined
+                  rounded
+                  small
+                  class="ma-2"
+                  >เลขวิ่งล่าง</v-btn
+                >
+              </v-card>
+            </v-row>
             <div class="row">
               <div class="col-md-6">
                 <v-card
@@ -167,17 +164,12 @@
                 </v-card>
               </div>
 
-              <v-card
-                dark
-                width="auto"
-                height="auto"
-                class="d-flex justify-content-center"
-              >
+              <v-card dark width="auto" class="d-flex justify-content-center">
                 <v-form>
-                  <v-card width="400" height="400" class="ma-6" dark>
+                  <v-card width="auto" class="ma-6" dark>
                     เลข3ตัว
-                    <v-chip color="red">
-                      จำนวนเงิน {{ sum }} บาท เลข {{ input }} บน
+                    <v-chip color="success">
+                      จำนวนเงิน {{ sum }} บาท เลข {{ input }} ล่าง
                     </v-chip>
                   </v-card>
                 </v-form>
