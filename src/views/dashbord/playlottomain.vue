@@ -93,6 +93,20 @@
                 >
                   <v-card width="500" height="400" dark>
                     <v-form>
+                      <v-text-field
+                        label="จำนวนเงิน"
+                        value="00.00"
+                        prefix="฿"
+                        v-model="sum"
+                      ></v-text-field>
+                      <keyboard
+                        scope
+                        v-model="sum"
+                        @custom="custom"
+                        @input="changed"
+                        :layouts="['1234567890{delete:backspace}']"
+                        :maxlength="3"
+                      ></keyboard>
                       <v-otp-input
                         dark
                         length="3"
@@ -103,7 +117,7 @@
                       ></v-otp-input>
                       <keyboard
                         scope
-                        class="keyboard"
+                        class="keyboard2"
                         v-model="input"
                         @custom="custom"
                         @input="changed"
@@ -152,6 +166,7 @@ export default {
       input: "",
       bet3: "",
       bet1: "",
+      sum: "",
       drawer: null,
       items: [
         { title: "จัดการโปรไฟล์", icon: "admin_panel_settings" },
@@ -185,7 +200,7 @@ export default {
 </script>
 
 <style>
-.keyboard {
+.keyboard2 {
   background: rgba(0, 255, 98, 0.459);
 }
 </style>
