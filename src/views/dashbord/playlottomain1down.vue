@@ -137,7 +137,7 @@
                         :maxlength="10"
                       ></keyboard>
 
-                      <v-chip close>ระบุตัวเลข</v-chip>
+                      <v-chip close color="success">ระบุตัวเลข</v-chip>
                       <v-otp-input
                         dark
                         length="3"
