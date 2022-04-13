@@ -102,22 +102,40 @@
 
                 <v-row align="center" justify="space-around" class="ma-12">
                   <span class="d-flex justify-center">
-                    <v-btn text color="primary"
-                      ><v-icon color="primary">account_balance_wallet</v-icon>
-                      <h3>ฝาก</h3>
-                    </v-btn>
+                    <v-tooltip top>
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn text color="primary" v-bind="attrs" v-on="on"
+                          ><v-icon color="primary"
+                            >account_balance_wallet</v-icon
+                          >
+                          <h3>ฝาก</h3>
+                        </v-btn>
+                      </template>
 
-                    <v-btn text color="success"
-                      ><v-icon color="success">add_card</v-icon>
-                      <h3>เพิ่มบัญชี</h3></v-btn
-                    >
+                      <span>ฝากเพื่อเดิมพัน</span>
+                    </v-tooltip>
+
+                    <v-tooltip right>
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn text color="success" v-bind="attrs" v-on="on">
+                          <v-icon color="success">add_card</v-icon>
+                          <h3>เพิ่มบัญชี</h3>
+                        </v-btn>
+                      </template>
+                      <span>สมาชิกใหม่เพิ่มบัญชีก่อน</span>
+                    </v-tooltip>
                   </span>
                   <span class="ma-10 mr-4">
-                    <v-btn text color="error"
-                      ><v-icon color="error">monetization_on</v-icon>
-                      <h3>ถอนเครดิต</h3></v-btn
-                    ></span
-                  >
+                    <v-tooltip right>
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn text color="error" v-bind="attrs" v-on="on"
+                          ><v-icon color="error">monetization_on</v-icon>
+                          <h3>ถอนเครดิต</h3></v-btn
+                        >
+                      </template>
+                      <span>แจ้งถอน</span>
+                    </v-tooltip>
+                  </span>
                   <v-sheet
                     class="d-flex justify-center rounded-xl"
                     color="pink darken-1"
@@ -155,6 +173,7 @@
                   shaped
                   top
                 >
+                  <img src="@/assets/imgs/003-lottery.png" width="60" />
                   <strong class="ma-3">ผลหวยยี่กี</strong>
                 </v-sheet>
               </v-stepper-header>
@@ -197,7 +216,8 @@
                   shaped
                   top
                 >
-                  <strong class="ma-3">ผลหวยรัฐบาล</strong>
+                  <img src="@/assets/imgs/003-lottery.png" width="60" />
+                  <strong class="ma-3"> ผลหวยรัฐบาล</strong>
                 </v-sheet>
               </v-stepper-header>
               <template>

@@ -12,7 +12,14 @@
               class="rounded-xl"
             >
               <v-card-title> </v-card-title>
-              <h4 class="text-center">หวยรัฐบาลไทย</h4>
+              <h4 class="text-center">
+                <img
+                  src="@/assets/icons/088-thailand.png"
+                  width="50"
+                  class="ml-2"
+                />
+                หวยรัฐบาลไทย
+              </h4>
 
               <div class="container">
                 <div class="row">

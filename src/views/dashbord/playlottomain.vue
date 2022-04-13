@@ -1,6 +1,6 @@
 <template>
-  <v-app
-    ><v-main
+  <v-app>
+    <v-main
       ><!-- App.vue -->
 
       <v-app-bar app dark>
@@ -41,11 +41,17 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
+
       <div class="container">
         <div class="col-md-12">
           <div class="container">
             <v-row>
-              <v-card class="justify-content-center ma-3" rounded elevation="4">
+              <v-card
+                class="d-flex justify-content-center ma-3"
+                width="600"
+                rounded
+                elevation="4"
+              >
                 <v-btn
                   @click.prevent="$router.push('/playlottomain')"
                   color="primary"
@@ -110,23 +116,26 @@
                   >เลขวิ่งล่าง</v-btn
                 >
               </v-card>
+
+              <ratlottothai />
             </v-row>
+
             <div class="row">
-              <div class="col-md-6">
-                <v-card
-                  dark
-                  width="auto"
-                  height="auto"
-                  class="d-flex justify-content-center"
-                >
-                  <v-card width="500" height="600" dark>
+              <div class="col-md-4">
+                <v-card width="auto" height="600" dark>
+                  <v-card
+                    dark
+                    width="auto"
+                    height="auto"
+                    class="d-flex justify-content-center"
+                  >
                     <v-form>
                       <v-text-field
                         label="จำนวนเงิน"
                         value="00.00"
                         prefix="฿"
+                        type="number"
                         v-model="sum"
-                        v-on:keyup.enter="nextPlease"
                       ></v-text-field>
                       <keyboard
                         scope
@@ -140,6 +149,7 @@
                       <v-chip close>ระบุตัวเลข</v-chip>
                       <v-otp-input
                         dark
+                        type="number"
                         length="3"
                         height="30"
                         width="30"
@@ -160,20 +170,41 @@
                       </v-btn>
                     </v-form>
                   </v-card>
-                  <!---->
                 </v-card>
               </div>
 
-              <v-card dark width="auto" class="d-flex justify-content-center">
-                <v-form>
-                  <v-card width="auto" class="ma-6" dark>
-                    เลข3ตัว
-                    <v-chip color="red">
-                      จำนวนเงิน {{ sum }} บาท เลข {{ input }} บน
-                    </v-chip>
-                  </v-card>
-                </v-form>
-              </v-card>
+              <div class="col-md-3">
+                <v-card dark width="auto" class="d-flex justify-content-center">
+                  <v-form>
+                    <v-card width="auto" class="ma-5" dark>
+                      เลข3ตัว
+                      <v-chip color="red">
+                        จำนวนเงิน {{ sum }} บาท เลข {{ input }} บน
+                      </v-chip>
+                    </v-card>
+                  </v-form>
+                </v-card>
+              </div>
+              <div class="col-md-4">
+                <v-card width="auto" dark>
+                  <v-simple-table>
+                    <template v-slot:default>
+                      <thead>
+                        <tr>
+                          <th class="text-left">หวย</th>
+                          <th class="text-left">เลข</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="item in desserts" :key="item.name">
+                          <td>{{ item.name }}</td>
+                          <td>{{ item.bet3up }}</td>
+                        </tr>
+                      </tbody>
+                    </template>
+                  </v-simple-table>
+                </v-card>
+              </div>
             </div>
           </div>
         </div>
@@ -187,10 +218,16 @@
 </template>
 
 <script>
+// import Modal from "@/components/Modal.vue";
+
 import keyboard from "vue-keyboard";
+import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
   data() {
     return {
+      alert: false,
+      text: " Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque",
+      showModal: false,
       tab: null,
       input: "",
       bet3: "",
@@ -207,7 +244,7 @@ export default {
       ],
       desserts: [
         {
-          name: "ยี่กี VIP",
+          name: "หวยรัฐ",
           bet3up: 159,
           row: 1,
           bet2up: 59,
@@ -215,8 +252,11 @@ export default {
       ],
     };
   },
-  components: { keyboard },
+  components: { keyboard, Ratlottothai },
   methods: {
+    RatlottothaiggleModal() {
+      this.showModal = !this.showModal;
+    },
     changed(value) {
       console.log("Value " + value);
     },

@@ -208,7 +208,7 @@ export default {
                     <thead>
                       <div class="d-flex justify-start mb-6 mt-3">
                         <img
-                          src="@/assets/icons/088-thailand.png"
+                          src="@/assets/icons/unitedstates.png"
                           width="50"
                           class="ml-2"
                         />
@@ -218,7 +218,7 @@ export default {
                           </h1> -->
                         </div>
                         <v-chip class="ma-2" color="success" outlined>
-                          <img src="@/assets/icons/005-gamble.png" width="50" />
+                          <img src="" width="50" />
                           <span class="material-icons"> language </span>
                           หวยหุ้นต่างประเทศ {{ $store.state.datestocklottery }}
                         </v-chip>

@@ -9,7 +9,10 @@
               <template>
                 <v-card v-for="datatabs in datatab" :key="datatabs.index">
                   <v-card-title> </v-card-title>
-                  <h4 class="text-center">หวยธนาคาร</h4>
+                  <h4 class="text-center">
+                    <img src="@/assets/imgs/aom.png" width="50" class="ml-2" />
+                    หวยธนาคาร
+                  </h4>
 
                   <div class="container">
                     <div class="row">

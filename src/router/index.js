@@ -66,6 +66,17 @@ const routes = [
     name: "Mainuse",
     component: () => import("@/views/dashbord/mainuse.vue"),
   },
+  {
+    path: "/registerform",
+    name: "Registerform",
+    component: () => import("@/components/RegisterForm.vue"),
+  },
+
+  {
+    path: "/ratlottothai",
+    name: "Ratlottothai",
+    component: () => import("@/views/pagepost/ratlottothai.vue"),
+  },
   // {
   //   path: "/main",
   //   name: "Main",
