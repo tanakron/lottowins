@@ -68,6 +68,7 @@
                       v-model="sum"
                       hidden-details
                       @keyup.enter="sum"
+                      :rules="$store.state.sum"
                     ></v-text-field>
                     <keyboard
                       scope

@@ -47,7 +47,8 @@
                       width="30"
                       class="ma-3 pa-2"
                       v-model="input"
-                      v-on:keyup.enter="onEnter"
+                      @click:append="input"
+                      @keyup.enter="input"
                     ></v-otp-input>
                     <keyboard
                       scope
@@ -58,12 +59,16 @@
                       :maxlength="2"
                     ></keyboard>
                     <v-text-field
+                      solo
                       class="pa-2"
                       label="จำนวนเงิน"
                       value="00.00"
                       prefix="฿"
                       type="number"
                       v-model="sum"
+                      hidden-details
+                      @keyup.enter="sum"
+                      :rules="$store.state.sum"
                     ></v-text-field>
                     <keyboard
                       scope
@@ -147,24 +152,41 @@
                   </div>
                 </v-card>
               </div>
-              <div class="col-md-5">
+              <div class="col-md-8">
                 <v-card width="auto" dark>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left">หวย</th>
-                          <th class="text-left">เลข</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="item in desserts" :key="item.name">
-                          <td>{{ item.name }}</td>
-                          <td>{{ item.bet3up }}</td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
+                  <v-list flat v-if="play.length">
+                    <div v-for="playlottos in play" :key="playlottos.id">
+                      <v-list-item
+                        @click="donePlay(playlottos.id)"
+                        :class="{ blue: play.done }"
+                      >
+                        <template v-slot:default>
+                          <v-list-item-action>
+                            <v-checkbox
+                              :input-value="play.done"
+                              color="primary"
+                            ></v-checkbox>
+                          </v-list-item-action>
+
+                          <v-list-item-content>
+                            <v-list-item-title>{{
+                              playlottos.usersname
+                            }}</v-list-item-title>
+                          </v-list-item-content>
+                          <v-list-item-action>
+                            <v-btn icon @click.stop="deletePlay(playlottos.id)">
+                              <v-icon color="red">delete</v-icon></v-btn
+                            >
+                          </v-list-item-action>
+                        </template>
+                      </v-list-item>
+
+                      <v-divider> </v-divider>
+                    </div>
+                  </v-list>
+                  <div v-else class="text-h5 info--text d-flex justify-center">
+                    ไม่มีข้อมูลการเล่น
+                  </div>
                 </v-card>
               </div>
             </div>
@@ -187,11 +209,39 @@ import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
   data() {
     return {
+      newPlay: "",
+      play: [
+        // {
+        //   id: 1,
+        //   usersname: "PG501",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+        // {
+        //   id: 2,
+        //   usersname: "PG502",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+        // {
+        //   id: 3,
+        //   usersname: "PG503",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+      ],
+      input: "",
       alert: false,
       text: "เรท",
       showModal: false,
       tab: null,
-      input: "",
+      addPlaylotto: "",
       bet3: "",
       bet1: "",
       sum: "",
@@ -216,6 +266,10 @@ export default {
   },
   components: { keyboard, Ratlottothai },
   methods: {
+    newinput() {
+      this.$store.commit("input", this.newinput);
+      this.newinput = "";
+    },
     RatlottothaiggleModal() {
       this.showModal = !this.showModal;
     },
@@ -225,6 +279,26 @@ export default {
 
     custom(keyboard) {
       console.log(keyboard.value);
+    },
+
+    addplay() {
+      let newPlay = {
+        id: new Date(),
+        usersname: "",
+        cadit: "1000",
+        datetime: "",
+        done: false,
+        idplay: new Date(),
+      };
+      this.play.push(newPlay);
+    },
+    donePlay(id) {
+      let plays = this.play.filter((plays) => plays.id === id)[0];
+      plays.done = !plays.done;
+      // console.log("id:", id);
+    },
+    deletePlay(id) {
+      this.play = this.play.filter((plays) => plays.id !== id);
     },
   },
 };

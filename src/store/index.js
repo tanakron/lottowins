@@ -21,6 +21,9 @@ export default new Vuex.Store({
     usertest: [{ usersname: "", userid: "", cadit: "1000", datetime: "" }],
     caditmain: [{ usersname: "", userid: "", cadit: "100", datetime: "" }],
     username: {},
+
+    //play
+    sum: [(v1) => !!v1 || " ใส่จำนวนเงิน"],
     // login
     usernameRules: [(v1) => !!v1 || " ใส่ username"],
     passwordRules: [(v1) => !!v1 || " ใส่ password"],

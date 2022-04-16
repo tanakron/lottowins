@@ -83,6 +83,11 @@ const routes = [
     name: "Bankcompany",
     component: () => import("@/views/dashbord/bankcompany.vue"),
   },
+  {
+    path: "/addbank",
+    name: "Addbank",
+    component: () => import("@/views/dashbord/addbank.vue"),
+  },
   // {
   //   path: "/main",
   //   name: "Main",

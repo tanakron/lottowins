@@ -137,7 +137,7 @@
 
                     <v-tooltip right>
                       <template v-slot:activator="{ on, attrs }">
-                        <v-btn text color="success" v-bind="attrs" v-on="on">
+                        <v-btn text color="success" v-bind="attrs" v-on="on"  @click.prevent="$router.push('/addbank')">
                           <v-icon color="success">add_card</v-icon>
                           <h3>เพิ่มบัญชี</h3>
                         </v-btn>
