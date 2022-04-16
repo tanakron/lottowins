@@ -10,6 +10,7 @@
                 label="username"
                 class="ma-2"
                 v-model="username"
+                :rules="$store.state.usernameRules"
                 solo
               >
               </v-text-field>
@@ -18,6 +19,7 @@
                 label="password"
                 class="ma-2"
                 type="text"
+                :rules="$store.state.passwordRules"
                 v-model="password"
                 solo
               ></v-text-field>
@@ -26,6 +28,7 @@
                 label="number Tel"
                 class="ma-2"
                 type="password"
+                :rules="$store.state.numberRules"
                 v-model="number"
                 solo
               ></v-text-field>

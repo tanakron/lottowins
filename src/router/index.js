@@ -48,17 +48,17 @@ const routes = [
   },
   {
     path: "/playlottomaindown",
-    name: "Playlottomain",
+    name: "playlottomaindown",
     component: () => import("@/views/dashbord/playlottomaindown.vue"),
   },
   {
     path: "/playlottomain1down",
-    name: "Playlottomain1",
+    name: "playlottomain1down",
     component: () => import("@/views/dashbord/playlottomain1down.vue"),
   },
   {
     path: "/playlottomain2down",
-    name: "Playlottomain2",
+    name: "Playlottomain2down",
     component: () => import("@/views/dashbord/playlottomain2down.vue"),
   },
   {
@@ -76,6 +76,12 @@ const routes = [
     path: "/ratlottothai",
     name: "Ratlottothai",
     component: () => import("@/views/pagepost/ratlottothai.vue"),
+  },
+
+  {
+    path: "/bankcompany",
+    name: "Bankcompany",
+    component: () => import("@/views/dashbord/bankcompany.vue"),
   },
   // {
   //   path: "/main",

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <v-card class="d-flex justify-center" dark>
+    <v-card class="d-flex justify-center" dark rounded="xl">
       <v-card width="600" height="300" :elevation="24" class="ma-3">
         <v-form>
           <v-row>
@@ -10,6 +10,7 @@
                 label="username"
                 class="ma-2"
                 v-model="username"
+                :rules="$store.state.usernameRules"
                 solo
               >
               </v-text-field>
@@ -19,6 +20,7 @@
                 class="ma-2"
                 type="password"
                 v-model="password"
+                :rules="$store.state.passwordRules"
                 solo
               ></v-text-field>
             </div>

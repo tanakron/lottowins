@@ -6,20 +6,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    playlotto: [
-      {
-        usersname: "",
-        userid: "",
-        cadit: "1000",
-        datetime: "",
-        done: false,
-        idplay: new Date(),
-      },
-    ],
     //drawer
     drawer: null,
     usertest: [{ usersname: "", userid: "", cadit: "1000", datetime: "" }],
     caditmain: [{ usersname: "", userid: "", cadit: "100", datetime: "" }],
+
     username: {},
     // login
     usernameRules: [(v1) => !!v1 || " ใส่ username"],
@@ -727,17 +718,6 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    input(state) {
-      let newPlay = {
-        usersname: "",
-        userid: "",
-        cadit: "1000",
-        datetime: "",
-        done: false,
-        idplay: new Date(),
-      };
-      state.playlotto.push(newPlay);
-    },
     SET_LOGGED_IN(state) {
       state.isLogged = true;
     },

@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-row>
-      <h1></h1>
       <div class="col d-flex justify-center mb-4">
         <v-sheet
           class="d-flex justify-center rounded-xl"
@@ -9,7 +8,6 @@
           elevation="4"
           height="80"
           width="210"
-          @click.prevent="$router.push('/playlottomain')"
         >
           <v-chip>เดิมพัน</v-chip>
           <img src="@/assets/imgs/003-lottery.png" width="60" />

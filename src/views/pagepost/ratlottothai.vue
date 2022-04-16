@@ -1,10 +1,8 @@
 <template>
   <div class="d-flex justify-content-center ma-3">
-    <!-- <v-btn color="success" class="ma-3" @click.prevent="$router.back()"
-      >กลับ</v-btn
-    > -->
     <v-card dark width="auto" height="auto" rounded="xl">
       <div class="col">
+        <h4>เรทราคา</h4>
         <v-chip class="ma-2">3ตัวบน <v-chip color="pink"> 900</v-chip> </v-chip>
         <v-chip class="ma-2"
           >3ตัวโต๊ด <v-chip color="pink"> 150</v-chip>

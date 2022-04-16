@@ -43,6 +43,13 @@
       </v-navigation-drawer>
       <div class="container">
         <div class="col-md-12">
+          <v-btn
+            rounded
+            color="pink"
+            class="white--text ma-4"
+            @click.prevent="$router.push('/mainuse')"
+            >Back</v-btn
+          >
           <div class="container">
             <div class="row">
               <v-sheet

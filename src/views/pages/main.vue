@@ -9,7 +9,6 @@
       <img src="https://เศษรฐี.com/banner-vip-group.gif" width="80%" />
     </v-card>
 
-    <!-- Sizes your content based upon application components -->
     <v-main>
       <Login> <div class="card"></div></Login>
       <tablottothai />
@@ -36,6 +35,7 @@ export default {
       to: "https://lin.ee/Iy5mkD6",
     };
   },
+
   components: {
     Login,
     tablottothai: require("@/views/pages/tablottothai.vue").default,

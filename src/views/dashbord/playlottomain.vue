@@ -7,202 +7,185 @@
         <img src="@/assets/icons/lotto.png" />
         <h2>LOTTOWINS</h2>
         <v-spacer></v-spacer>
-        <v-icon color="withe" @click.stop="drawer = !drawer">reorder</v-icon>
+        <v-icon color="withe" @click.stop="$store.state.drawer = !drawer"
+          >reorder</v-icon
+        >
       </v-app-bar>
-      <v-navigation-drawer v-model="drawer" absolute temporary>
-        <v-list-item>
-          <v-list-item-avatar>
-            <v-img src="@/assets/icons/lotto.png"></v-img>
-          </v-list-item-avatar>
-
-          <v-list-item-content>
-            <v-list-item-title>ฉายา :</v-list-item-title>
-            <h6>Basic Member</h6>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider></v-divider>
-
-        <h5>
-          <v-icon color="primary">monetization_on</v-icon> ยอดเงิน :
-          {{ $store.state.isCadit }}
-        </h5>
-
-        <v-divider></v-divider>
-
-        <v-list dense>
-          <v-list-item v-for="item in items" :key="item.title" link>
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
 
       <div class="container">
-        <div class="col-md-12">
-          <div class="container">
-            <v-row>
-              <v-card
-                class="d-flex justify-content-center ma-3"
-                width="600"
-                rounded
-                elevation="4"
-              >
-                <v-btn
-                  @click.prevent="$router.push('/playlottomain')"
-                  color="primary"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
-                >
-                  3ตัวบน</v-btn
-                >
-                <v-btn
-                  @click.prevent="$router.push('/playlottomain2')"
-                  color="primary"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
-                  >2ตัวบน</v-btn
-                >
-                <v-btn
-                  @click.prevent="$router.push('/playlottomain1')"
-                  color="primary"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
-                  >เลขวิ่งบน</v-btn
-                >
+        <div class="container">
+          <v-btn
+            rounded
+            color="pink"
+            class="white--text ma-4"
+            @click.prevent="$router.push('/mainuse')"
+            >Back</v-btn
+          >
+          <ratlottothai :text="text" />
 
-                <v-btn
-                  @click.prevent="$router.push('/playlottomaindown')"
-                  color="red"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-12">
+                <v-card class="ma-1 pa-2 d-flex justify-content-center">
+                  {{ input }} บน | {{ sum }} บาท</v-card
                 >
-                  3ตัวล่าง</v-btn
-                >
-                <v-btn
-                  @click.prevent="$router.push('/playlottomain2down')"
-                  color="red"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
-                  >2ตัวล่าง</v-btn
-                >
-                <v-btn
-                  @click.prevent="$router.push('/playlottomain1down')"
-                  color="red"
-                  elevation="4"
-                  outlined
-                  rounded
-                  small
-                  class="ma-2"
-                  >เลขวิ่งล่าง</v-btn
-                >
-              </v-card>
-
-              <ratlottothai />
-            </v-row>
-
-            <div class="row">
-              <div class="col-md-4">
-                <v-card width="auto" height="600" dark>
-                  <v-card
-                    dark
-                    width="auto"
-                    height="auto"
-                    class="d-flex justify-content-center"
-                  >
-                    <v-form>
-                      <v-text-field
-                        label="จำนวนเงิน"
-                        value="00.00"
-                        prefix="฿"
-                        type="number"
-                        v-model="sum"
-                      ></v-text-field>
-                      <keyboard
-                        scope
-                        v-model="sum"
-                        @custom="custom"
-                        @input="changed"
-                        :layouts="['1234567890{delete:backspace}']"
-                        :maxlength="10"
-                      ></keyboard>
-
-                      <v-chip close>ระบุตัวเลข</v-chip>
-                      <v-otp-input
-                        dark
-                        type="number"
-                        length="3"
-                        height="30"
-                        width="30"
-                        class="ma-3"
-                        v-model="input"
-                        v-on:keyup.enter="onEnter"
-                      ></v-otp-input>
-                      <keyboard
-                        scope
-                        v-model="input"
-                        @custom="custom"
-                        @input="changed"
-                        :layouts="['1234567890{delete:backspace}']"
-                        :maxlength="3"
-                      ></keyboard>
-                      <v-btn class="ma-2" outlined color="indigo">
-                        ส่งโพย
-                      </v-btn>
-                    </v-form>
-                  </v-card>
-                </v-card>
               </div>
-
-              <div class="col-md-3">
-                <v-card dark width="auto" class="d-flex justify-content-center">
+              <v-card width="auto" dark rounded="xl">
+                <v-card
+                  dark
+                  width="auto"
+                  height="auto"
+                  class="d-flex justify-content-center"
+                >
                   <v-form>
-                    <v-card width="auto" class="ma-5" dark>
-                      เลข3ตัว
-                      <v-chip color="red">
-                        จำนวนเงิน {{ sum }} บาท เลข {{ input }} บน
-                      </v-chip>
-                    </v-card>
+                    <v-chip class="ma-2">ระบุตัวเลข</v-chip>
+                    <v-otp-input
+                      dark
+                      type="number"
+                      length="3"
+                      height="30"
+                      width="30"
+                      class="ma-3 pa-2"
+                      v-model="input"
+                      @click:append="input"
+                      @keyup.enter="input"
+                    ></v-otp-input>
+                    <keyboard
+                      scope
+                      v-model="input"
+                      @custom="custom"
+                      @input="changed"
+                      :layouts="['1234567890{delete:backspace}']"
+                      :maxlength="3"
+                    ></keyboard>
+                    <v-text-field
+                      solo
+                      class="pa-2"
+                      label="จำนวนเงิน"
+                      value="00.00"
+                      prefix="฿"
+                      type="number"
+                      v-model="sum"
+                      hidden-details
+                      @keyup.enter="sum"
+                    ></v-text-field>
+                    <keyboard
+                      scope
+                      v-model="sum"
+                      @custom="custom"
+                      @input="changed"
+                      :layouts="['1234567890{delete:backspace}']"
+                      :maxlength="10"
+                    ></keyboard>
+                    <v-btn class="ma-2" outlined color="indigo"> ส่งโพย </v-btn>
                   </v-form>
                 </v-card>
+              </v-card>
+            </div>
+
+            <div class="col-md-6">
+              <div class="continer">
+                <v-card rounded="xl" dark>
+                  <div class="d-flex justify-content-center ma-3">
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomain')"
+                      color="primary"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                    >
+                      3ตัวบน</v-btn
+                    >
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomain2')"
+                      color="primary"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                      >2ตัวบน</v-btn
+                    >
+                  </div>
+                  <div class="d-flex justify-content-center ma-3">
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomain1')"
+                      color="primary"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                      >เลขวิ่งบน</v-btn
+                    >
+
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomaindown')"
+                      color="red"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                    >
+                      3ตัวล่าง</v-btn
+                    >
+                  </div>
+                  <div class="d-flex justify-content-center ma-3">
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomain2down')"
+                      color="red"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                      >2ตัวล่าง</v-btn
+                    >
+                    <v-btn
+                      @click.prevent="$router.push('/playlottomain1down')"
+                      color="red"
+                      elevation="4"
+                      rounded
+                      small
+                      class="ma-2"
+                      >เลขวิ่งล่าง
+                    </v-btn>
+                  </div>
+                </v-card>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-8">
                 <v-card width="auto" dark>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left">หวย</th>
-                          <th class="text-left">เลข</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="item in desserts" :key="item.name">
-                          <td>{{ item.name }}</td>
-                          <td>{{ item.bet3up }}</td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
+                  <v-list flat v-if="play.length">
+                    <div v-for="playlottos in play" :key="playlottos.id">
+                      <v-list-item
+                        @click="donePlay(playlottos.id)"
+                        :class="{ blue: play.done }"
+                      >
+                        <template v-slot:default>
+                          <v-list-item-action>
+                            <v-checkbox
+                              :input-value="play.done"
+                              color="primary"
+                            ></v-checkbox>
+                          </v-list-item-action>
+
+                          <v-list-item-content>
+                            <v-list-item-title>{{
+                              playlottos.usersname
+                            }}</v-list-item-title>
+                          </v-list-item-content>
+                          <v-list-item-action>
+                            <v-btn icon @click.stop="deletePlay(playlottos.id)">
+                              <v-icon color="red">delete</v-icon></v-btn
+                            >
+                          </v-list-item-action>
+                        </template>
+                      </v-list-item>
+
+                      <v-divider> </v-divider>
+                    </div>
+                  </v-list>
+                  <div v-else class="text-h5 info--text d-flex justify-center">
+                    ไม่มีข้อมูลการเล่น
+                  </div>
                 </v-card>
               </div>
             </div>
@@ -225,11 +208,39 @@ import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
   data() {
     return {
+      newPlay: "",
+      play: [
+        // {
+        //   id: 1,
+        //   usersname: "PG501",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+        // {
+        //   id: 2,
+        //   usersname: "PG502",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+        // {
+        //   id: 3,
+        //   usersname: "PG503",
+        //   cadit: "1000",
+        //   datetime: "",
+        //   done: false,
+        //   idplay: new Date(),
+        // },
+      ],
+      input: "",
       alert: false,
-      text: " Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque",
+      text: "เรท",
       showModal: false,
       tab: null,
-      input: "",
+      addPlaylotto: "",
       bet3: "",
       bet1: "",
       sum: "",
@@ -254,6 +265,10 @@ export default {
   },
   components: { keyboard, Ratlottothai },
   methods: {
+    newinput() {
+      this.$store.commit("input", this.newinput);
+      this.newinput = "";
+    },
     RatlottothaiggleModal() {
       this.showModal = !this.showModal;
     },
@@ -263,6 +278,26 @@ export default {
 
     custom(keyboard) {
       console.log(keyboard.value);
+    },
+
+    addplay() {
+      let newPlay = {
+        id: new Date(),
+        usersname: "",
+        cadit: "1000",
+        datetime: "",
+        done: false,
+        idplay: new Date(),
+      };
+      this.play.push(newPlay);
+    },
+    donePlay(id) {
+      let plays = this.play.filter((plays) => plays.id === id)[0];
+      plays.done = !plays.done;
+      // console.log("id:", id);
+    },
+    deletePlay(id) {
+      this.play = this.play.filter((plays) => plays.id !== id);
     },
   },
 };

@@ -57,23 +57,38 @@
                   elevation="4"
                   height="auto"
                   width="auto"
-                >
-                  <h4 class="align-self-sm-center ma-3">
-                    <v-icon color="teal darken-2" large>face</v-icon> username:
-                  </h4>
+                  ><v-icon color="teal darken-2" large>face</v-icon>
+                  <h6 class="align-self-sm-center ma-3">id:</h6>
                   <v-card
-                    class="rounded-r-xl mr-10"
                     color="yellow accent-1"
-                    width="auto"
-                    height="auto"
+                    v-for="usertestid in $store.state.usertest"
+                    :key="usertestid.index"
                   >
                     <h3 class="d-flex justify-center ma-2">
                       <v-icon color="teal darken-2" large
                         >account_balance_wallet</v-icon
-                      >ยอดเงิน : {{ $store.state.isCadit }}
-                    </h3></v-card
-                  >
+                      >
+                      <!-- <span
+                        v-for="caditmain in $store.state.caditmain"
+                        :key="caditmain.index"
+                      >
+                        {{ caditmain.cadit }}
+                      </span> -->
+                    </h3>
+                    ยอดเงิน :
+                    {{ usertestid.cadit }}
+                  </v-card>
                 </v-sheet>
+                <span class="d-flex justify-center ma-4">
+                  <v-btn color="pink darken-1" class="d-block justify-center">
+                    <v-icon color="blue-grey darken-4" class="ml-3"
+                      >emoji_events</v-icon
+                    >
+                    <h3 class="d-block justify-center white--text">
+                      ผลรางวัล
+                    </h3></v-btn
+                  ></span
+                >
               </v-card>
             </div>
             <!-- เติมเครดิต ฝากถอน -->
@@ -100,11 +115,16 @@
                   </v-badge>
                 </v-sheet>
 
-                <v-row align="center" justify="space-around" class="ma-12">
+                <v-row align="center" class="ma-12">
                   <span class="d-flex justify-center">
                     <v-tooltip top>
                       <template v-slot:activator="{ on, attrs }">
-                        <v-btn text color="primary" v-bind="attrs" v-on="on"
+                        <v-btn
+                          text
+                          color="primary"
+                          v-bind="attrs"
+                          v-on="on"
+                          @click.prevent="$router.push('/bankcompany')"
                           ><v-icon color="primary"
                             >account_balance_wallet</v-icon
                           >
@@ -136,27 +156,89 @@
                       <span>แจ้งถอน</span>
                     </v-tooltip>
                   </span>
-                  <v-sheet
-                    class="d-flex justify-center rounded-xl"
-                    color="pink darken-1"
-                    elevation="4"
-                    height="30"
-                    width="210"
-                  >
-                    <v-icon color="blue-grey darken-4" class="ml-3"
-                      >emoji_events</v-icon
-                    >
-                    <h3 class="d-flex justify-center white--text">
-                      ผลรางวัล
-                    </h3></v-sheet
-                  >
                 </v-row>
               </v-card>
             </div>
           </div>
 
-          <div class="col"></div>
-          <div class="col"><tablotto class="ma-5" /></div>
+          <div class="col">
+            <v-card dark rounded="xl" class="justify-md-space-around">
+              <v-badge left color="pink" class="ma-2 pa-1" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/playlottomain')"
+                >
+                  <img src="@/assets/icons/088-thailand.png" width="30" />
+                </v-btn>
+                <span slot="badge">หวยรัฐ</span>
+              </v-badge>
+              <v-badge left color="pink" class="ma-2 pa-2" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/playlottobank')"
+                >
+                  <img src="@/assets/imgs/aom.png" width="30" />
+                </v-btn>
+
+                <span slot="badge">หวยธนาคาร</span>
+              </v-badge>
+              <v-badge left color="pink" class="ma-2 pa-1" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/')"
+                >
+                  <img src="@/assets/icons/lotto.png" width="30" />
+                </v-btn>
+
+                <span slot="badge">หวยยี่กีVIP</span>
+              </v-badge>
+              <v-badge left color="pink" class="ma-2 pa-1" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/playlottostock')"
+                >
+                  <img src="@/assets/icons/unitedstates.png" width="30" />
+                </v-btn>
+
+                <span slot="badge">หวยหุ้น</span>
+              </v-badge>
+              <v-badge left color="pink" class="ma-2 pa-1" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/playlotto')"
+                >
+                  <img src="@/assets/icons/vietnam.png" width="30" />
+                </v-btn>
+
+                <span slot="badge">หวยชุด</span>
+              </v-badge>
+            </v-card>
+          </div>
         </div>
 
         <div class="row">
@@ -500,7 +582,9 @@
 export default {
   data() {
     return {
+      caditmain: [],
       drawer: null,
+      usertest: [],
       items: [
         { title: "จัดการโปรไฟล์", icon: "admin_panel_settings" },
         { title: "เปลี่ยนพาส", icon: "password" },
@@ -511,7 +595,6 @@ export default {
       ],
       desserts: [
         {
-          name: "ยี่กี VIP",
           bet3up: 159,
           row: 1,
           bet2up: 59,
@@ -520,7 +603,7 @@ export default {
     };
   },
   components: {
-    tablotto: require("@/views/pages/tablottouser.vue").default,
+    // tablotto: require("@/views/pages/tablottouser.vue").default,
   },
 };
 </script>
