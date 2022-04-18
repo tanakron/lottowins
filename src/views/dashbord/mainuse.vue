@@ -137,7 +137,13 @@
 
                     <v-tooltip right>
                       <template v-slot:activator="{ on, attrs }">
-                        <v-btn text color="success" v-bind="attrs" v-on="on"  @click.prevent="$router.push('/addbank')">
+                        <v-btn
+                          text
+                          color="success"
+                          v-bind="attrs"
+                          v-on="on"
+                          @click.prevent="$router.push('/addbank')"
+                        >
                           <v-icon color="success">add_card</v-icon>
                           <h3>เพิ่มบัญชี</h3>
                         </v-btn>
@@ -171,7 +177,7 @@
                   large
                   rounded
                   color="amber lighten-1"
-                  @click.prevent="$router.push('/playlottomain')"
+                  @click.prevent="$router.push('/playlottomain/')"
                 >
                   <img src="@/assets/icons/088-thailand.png" width="30" />
                 </v-btn>
@@ -180,6 +186,7 @@
               <v-badge left color="pink" class="ma-2 pa-2" inline>
                 <v-btn
                   class="mx-3 white--text"
+                  :id="id"
                   fab
                   dark
                   large
@@ -582,6 +589,7 @@
 export default {
   data() {
     return {
+      id: "1011",
       caditmain: [],
       drawer: null,
       usertest: [],

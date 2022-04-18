@@ -4,25 +4,34 @@
     style="max-width: 400px; margin: 50px auto; background: #234"
   >
     <!-- แทง -->
+
     <div
       class="w-full rounded m-1 p-3 text-right lead font-weight-bold text-white bg-vue-dark"
-    >
-      {{ calculatorValue }}
-    </div>
-    <v-chip class="ma-2">ระบุตัวเลข{{ bet3 }} </v-chip>
+    ></div>
 
-    <v-form @submit.prevent="submit">
+    <v-chip class="ma-2">ระบุตัวเลข{{ bet3 }} </v-chip>
+    {{ addplay.bet3up }}
+    <v-form @submit.prevent="onSubmit()">
       <v-otp-input
         dark
         type="number"
         length="3"
+        name="bet3up"
         height="30"
         width="30"
         class="ma-3 pa-2"
-        v-model="this.calculatorValue"
-        @click:append="this.calculatorValue"
-        @keyup.enter="this.calculatorValue"
+        v-model="this.addplay.bet3up"
+        @click:append="this.addplay.bet3up"
+        @keyup.enter="this.addplay.bet3up"
       ></v-otp-input>
+      <v-text-field
+        type="number"
+        label="จำนวนเงิน"
+        v-model.number="this.addplay.betpay"
+        solo
+        @click:append="this.addplay.betpay"
+        @keyup.enter="this.addplay.betpay"
+      ></v-text-field>
       <v-btn class="ma-2" outlined color="indigo" type="submit"> ส่งโพย </v-btn>
     </v-form>
     <!-- Calculator buttons -->
@@ -43,12 +52,18 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Calculator",
   props: ["bet3"],
   data() {
     return {
+      userslog: [],
       newPlay: "",
+      addplay: {
+        bet3up: "",
+        betpay: "",
+      },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
       operator: null,
@@ -82,36 +97,22 @@ export default {
     };
   },
   methods: {
-    submit() {
-      alert(JSON.stringify(this.calculatorValue));
+    async onSubmit() {
+      await axios.post(
+        "http://localhost:3000/postplaylotto/bet3up",
+        this.addplay
+      );
     },
+
     action(n) {
       /* Append value */
       if (!isNaN(n) || n === ".") {
-        this.calculatorValue += n + "";
+        this.addplay.bet3up += n + "";
       }
       /* Clear value */
       if (n === "C") {
-        this.calculatorValue = "";
+        this.addplay.bet3up = "";
       }
-      //   /* Percentage */
-      //   if (n === "%") {
-      //     this.calculatorValue = this.calculatorValue / 100 + "";
-      //   }
-      //   /* Operators */
-      //   if (["/", "*", "-", "+"].includes(n)) {
-      //     this.operator = n;
-      //     this.previousCalculatorValue = this.calculatorValue;
-      //     this.calculatorValue = "";
-      //   }
-      /* Calculate result using the eval function */
-      //   if (n === "=") {
-      //     this.calculatorValue = eval(
-      //       this.previousCalculatorValue + this.operator + this.calculatorValue
-      //     );
-      //     this.previousCalculatorValue = "";
-      //     this.operator = null;
-      //   }
     },
   },
 };

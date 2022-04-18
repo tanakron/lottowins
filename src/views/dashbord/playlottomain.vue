@@ -92,16 +92,16 @@
 
 import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
+  name: "Playlottomain",
   props: ["id"],
   async mounted() {
-    await fetch("http://localhost:3000/getplaylotto/palyid/")
+    await fetch(`http://localhost:3000/getplaylotto/palyid/1011`)
       .then((res) => res.json())
       .then((data) => (this.getplay = data))
       .catch((err) => console.log(err.message));
   },
   data() {
     return {
-      userid: "1011",
       result: [],
       getplay: [],
       datatab: [],
