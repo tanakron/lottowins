@@ -22,10 +22,8 @@
         </v-list-item>
         <v-divider></v-divider>
 
-        <h5>
-          <v-icon color="primary">monetization_on</v-icon> ยอดเงิน :
-          {{ $store.state.isCadit }}
-        </h5>
+        <v-icon color="primary">monetization_on</v-icon> ยอดเงิน :
+        {{ $store.state.isCadit }}
 
         <v-divider></v-divider>
 
@@ -76,35 +74,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />
-                      ลาวกาชาด <v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />ลาวสตาร์ VIP<v-icon large>add_circle</v-icon>
-                    </h5>
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />
+                    ลาวกาชาด
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
@@ -119,36 +103,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />ลาวVIP<v-icon large>add_circle</v-icon>
-                    </h5>
-                    <p class="back--text caption">ปิดรับแทง</p>
-                  </v-card-text>
-                </v-sheet>
-              </div>
-              <div class="col">
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />ลาวสามัคคี<v-icon large>add_circle</v-icon>
-                    </h5>
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />ลาวสตาร์ VIP
+
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
@@ -163,34 +132,20 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />หวยลาว<v-icon large>add_circle</v-icon>
-                    </h5>
-                    <p class="back--text caption">ปิดรับแทง</p>
-                  </v-card-text>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />ลาวสตาร์<v-icon large>add_circle</v-icon>
-                    </h5>
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />ลาวVIP
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
@@ -207,13 +162,107 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />ลาวHD<v-icon large>add_circle</v-icon>
-                    </h5>
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />ลาวสามัคคี
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />หวยลาว
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />ลาวสตาร์
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+              </div>
+              <div class="col">
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />ลาวHD
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
@@ -229,14 +278,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/laos.png"
-                        width="30"
-                        class="ma-1"
-                      />
-                      ลาวทีวี<v-icon large>add_circle</v-icon>
-                    </h5>
+                    <img
+                      src="@/assets/icons/laos.png"
+                      width="30"
+                      class="ma-1"
+                    />
+                    ลาวทีวี
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
@@ -251,14 +307,12 @@
                 shaped
               >
                 <v-card-title>
-                  <h5>
-                    <img
-                      src="@/assets/icons/vietnam.png"
-                      width="30"
-                      class="ma-1"
-                    />
-                    หวยเวียดนาม
-                  </h5>
+                  <img
+                    src="@/assets/icons/vietnam.png"
+                    width="30"
+                    class="ma-1"
+                  />
+                  หวยเวียดนาม
                 </v-card-title></v-sheet
               >
 
@@ -274,14 +328,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอย EXTRA <v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอย EXTRA
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -295,15 +356,22 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />
-                      ฮานอย4D<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />
+                    ฮานอย4D
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -317,14 +385,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอยพัฒนา<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอยพัฒนา
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
               </div>
@@ -340,14 +415,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอย VIP<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอย VIP
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -361,14 +443,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -382,15 +471,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                    <v-chip>พิเศษ</v-chip>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอย<v-chip>พิเศษ</v-chip>
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
               </div>
@@ -406,14 +501,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอยสามัคคี<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอยสามัคคี
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="green accent-2"></p>
@@ -429,14 +531,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอยกาชาด<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอยกาชาด
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>
@@ -452,14 +561,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮานอยทีวี<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮานอยทีวี
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>

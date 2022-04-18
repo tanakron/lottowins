@@ -22,10 +22,8 @@
         </v-list-item>
         <v-divider></v-divider>
 
-        <h5>
-          <v-icon color="primary">monetization_on</v-icon> ยอดเงิน :
-          {{ $store.state.isCadit }}
-        </h5>
+        <v-icon color="primary">monetization_on</v-icon> ยอดเงิน :
+        {{ $store.state.isCadit }}
 
         <v-divider></v-divider>
 
@@ -76,10 +74,17 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      หวยมาเลย์ <v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    หวยมาเลย์
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
               </div>
@@ -95,14 +100,12 @@
                 shaped
               >
                 <v-card-title>
-                  <h5>
-                    <img
-                      src="@/assets/icons/unitedstates.png"
-                      width="30"
-                      class="ma-1"
-                    />
-                    หวยหุ้น
-                  </h5>
+                  <img
+                    src="@/assets/icons/unitedstates.png"
+                    width="30"
+                    class="ma-1"
+                  />
+                  หวยหุ้น
                 </v-card-title></v-sheet
               >
 
@@ -118,14 +121,15 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/unitedstates.png"
-                        width="30"
-                        class="ma-1"
-                      />หวยหุ้นดาวน์โจน <v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/unitedstates.png"
+                      width="30"
+                      class="ma-1"
+                    />หวยหุ้นดาวน์โจน
+                    <v-btn fab dark large color="blue-grey darken-2">
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -139,15 +143,22 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />
-                      หุ้นเยอรมัน<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />
+                    หุ้นเยอรมัน
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -161,14 +172,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นอังกฤษ<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นอังกฤษ
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
                 <v-sheet
@@ -182,14 +200,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />จีนบ่าย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />จีนบ่าย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>
@@ -205,125 +230,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />จีนเช้า<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-
-                  <p class="back--text"></p>
-                </v-sheet>
-              </div>
-              <div class="col">
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />นิเคอิรอบบ่าย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="120"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />นิเคอิรอบเช้า<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="120"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นอินเดีย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮั่งเส็งรอบเช้า<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
-                  </v-card-text>
-
-                  <p class="back--text"></p>
-                </v-sheet>
-                <v-sheet
-                  class="ma-2"
-                  color="green accent-2"
-                  elevation="6"
-                  height="100"
-                  outlined
-                  rounded
-                  shaped
-                  width="250"
-                >
-                  <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นไต้หวัน<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />จีนเช้า
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>
@@ -341,14 +262,167 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นสิงคโปร์<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />นิเคอิรอบบ่าย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="120"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />นิเคอิรอบเช้า
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="120"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นอินเดีย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮั่งเส็งรอบเช้า
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+
+                  <p class="back--text"></p>
+                </v-sheet>
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นไต้หวัน
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
+                  </v-card-text>
+
+                  <p class="back--text"></p>
+                </v-sheet>
+              </div>
+              <div class="col">
+                <v-sheet
+                  class="ma-2"
+                  color="green accent-2"
+                  elevation="6"
+                  height="100"
+                  outlined
+                  rounded
+                  shaped
+                  width="250"
+                >
+                  <v-card-text class="back--text">
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นสิงคโปร์
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="green accent-2"></p>
@@ -364,14 +438,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />ฮั่งเส็งรอบบ่าย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />ฮั่งเส็งรอบบ่าย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>
@@ -387,14 +468,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นเกาหลี<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นเกาหลี
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>
@@ -410,14 +498,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/vietnam.png"
-                        width="30"
-                        class="ma-1"
-                      />หุ้นรัสเซีย<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/vietnam.png"
+                      width="30"
+                      class="ma-1"
+                    />หุ้นรัสเซีย
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
 
                   <p class="back--text"></p>

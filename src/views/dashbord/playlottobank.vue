@@ -76,10 +76,17 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      หวยออมสิน<v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    หวยออมสิน
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
               </div>
@@ -118,14 +125,21 @@
                   width="250"
                 >
                   <v-card-text class="back--text">
-                    <h5>
-                      <img
-                        src="@/assets/icons/unitedstates.png"
-                        width="30"
-                        class="ma-1"
-                      />หวยธกส <v-icon large>add_circle</v-icon>
-                      <p class="back--text caption">ปิดรับแทง</p>
-                    </h5>
+                    <img
+                      src="@/assets/icons/unitedstates.png"
+                      width="30"
+                      class="ma-1"
+                    />หวยธกส
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                    >
+                      <v-icon dark>add_circle</v-icon>
+                    </v-btn>
+                    <p class="back--text caption">ปิดรับแทง</p>
                   </v-card-text>
                 </v-sheet>
               </div>

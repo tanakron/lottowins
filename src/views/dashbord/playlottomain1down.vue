@@ -25,40 +25,68 @@
 
           <div class="row">
             <div class="col-md-6">
-              <div class="col-md-12">
-                <v-card class="ma-1 pa-2 d-flex justify-content-center">
-                  {{ input }} ล่าง | {{ sum }} บาท</v-card
-                >
-              </div>
               <v-card width="auto" dark rounded="xl">
-                <v-card
-                  dark
-                  width="auto"
-                  height="auto"
-                  class="d-flex justify-content-center"
-                >
-                  <v-form>
-                    <v-chip class="ma-2">ระบุตัวเลข</v-chip>
-                    <v-otp-input
-                      dark
-                      type="number"
-                      length="1"
-                      height="30"
-                      width="30"
-                      class="ma-3 pa-2"
-                      v-model="input"
-                      @click:append="input"
-                      @keyup.enter="input"
-                    ></v-otp-input>
-                    <keyboard
-                      scope
-                      v-model="input"
-                      @custom="custom"
-                      @input="changed"
-                      :layouts="['1234567890{delete:backspace}']"
-                      :maxlength="1"
-                    ></keyboard>
-                    <v-text-field
+                <v-card dark width="auto" height="auto">
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomain')"
+                    color="primary"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                  >
+                    3ตัวบน</v-btn
+                  >
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomain2')"
+                    color="primary"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                    >2ตัวบน</v-btn
+                  >
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomain1')"
+                    color="primary"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                    >เลขวิ่งบน</v-btn
+                  >
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomaindown')"
+                    color="red"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                  >
+                    3ตัวล่าง</v-btn
+                  >
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomain2down')"
+                    color="red"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                    >2ตัวล่าง</v-btn
+                  >
+                  <v-btn
+                    @click.prevent="$router.push('/playlottomain1down')"
+                    color="red"
+                    elevation="4"
+                    rounded
+                    small
+                    class="ma-2"
+                    >เลขวิ่งล่าง
+                  </v-btn>
+
+                  <playbetdown1 :bet3="typebet3" />
+
+                  <!-- <v-text-field
                       solo
                       class="pa-2"
                       label="จำนวนเงิน"
@@ -69,89 +97,13 @@
                       hidden-details
                       @keyup.enter="sum"
                       :rules="$store.state.sum"
-                    ></v-text-field>
-                    <keyboard
-                      scope
-                      v-model="sum"
-                      @custom="custom"
-                      @input="changed"
-                      :layouts="['1234567890{delete:backspace}']"
-                      :maxlength="10"
-                    ></keyboard>
-                    <v-btn class="ma-2" outlined color="indigo"> ส่งโพย </v-btn>
-                  </v-form>
+                    ></v-text-field> -->
                 </v-card>
               </v-card>
             </div>
 
             <div class="col-md-6">
-              <div class="continer">
-                <v-card rounded="xl" dark>
-                  <div class="d-flex justify-content-center ma-3">
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomain')"
-                      color="primary"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                    >
-                      3ตัวบน</v-btn
-                    >
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomain2')"
-                      color="primary"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                      >2ตัวบน</v-btn
-                    >
-                  </div>
-                  <div class="d-flex justify-content-center ma-3">
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomain1')"
-                      color="primary"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                      >เลขวิ่งบน</v-btn
-                    >
-
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomaindown')"
-                      color="red"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                    >
-                      3ตัวล่าง</v-btn
-                    >
-                  </div>
-                  <div class="d-flex justify-content-center ma-3">
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomain2down')"
-                      color="red"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                      >2ตัวล่าง</v-btn
-                    >
-                    <v-btn
-                      @click.prevent="$router.push('/playlottomain1down')"
-                      color="red"
-                      elevation="4"
-                      rounded
-                      small
-                      class="ma-2"
-                      >เลขวิ่งล่าง
-                    </v-btn>
-                  </div>
-                </v-card>
-              </div>
+              <div class="continer"></div>
               <div class="col-md-8">
                 <v-card width="auto" dark>
                   <v-list flat v-if="play.length">
@@ -173,14 +125,10 @@
                               playlottos.usersname
                             }}</v-list-item-title>
                           </v-list-item-content>
-                          <v-list-item-action>
-                            <v-btn icon @click.stop="deletePlay(playlottos.id)">
-                              <v-icon color="red">delete</v-icon></v-btn
-                            >
-                          </v-list-item-action>
+                          <v-list-item-action> </v-list-item-action>
                         </template>
                       </v-list-item>
-
+                      {{ calculatorValue }}
                       <v-divider> </v-divider>
                     </div>
                   </v-list>
@@ -205,10 +153,14 @@
 // import Modal from "@/components/Modal.vue";
 
 import keyboard from "vue-keyboard";
+import Playbetdown from "../../components/playbetdown.vue";
 import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
+  props: {},
   data() {
     return {
+      typebet3: "1ตัวล่าง",
+      calculatorValue: "",
       newPlay: "",
       play: [
         // {
@@ -236,7 +188,7 @@ export default {
         //   idplay: new Date(),
         // },
       ],
-      input: "",
+
       alert: false,
       text: "เรท",
       showModal: false,
@@ -264,12 +216,13 @@ export default {
       ],
     };
   },
-  components: { keyboard, Ratlottothai },
+  components: {
+    keyboard,
+    Ratlottothai,
+
+    playbetdown1: require("@/components/playbetdown1.vue").default,
+  },
   methods: {
-    newinput() {
-      this.$store.commit("input", this.newinput);
-      this.newinput = "";
-    },
     RatlottothaiggleModal() {
       this.showModal = !this.showModal;
     },
@@ -279,26 +232,6 @@ export default {
 
     custom(keyboard) {
       console.log(keyboard.value);
-    },
-
-    addplay() {
-      let newPlay = {
-        id: new Date(),
-        usersname: "",
-        cadit: "1000",
-        datetime: "",
-        done: false,
-        idplay: new Date(),
-      };
-      this.play.push(newPlay);
-    },
-    donePlay(id) {
-      let plays = this.play.filter((plays) => plays.id === id)[0];
-      plays.done = !plays.done;
-      // console.log("id:", id);
-    },
-    deletePlay(id) {
-      this.play = this.play.filter((plays) => plays.id !== id);
     },
   },
 };

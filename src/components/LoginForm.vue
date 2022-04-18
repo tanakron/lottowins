@@ -32,6 +32,11 @@
               <v-btn rounded color="teal accent-2  " class="ma-2" outlined dark>
                 เข้าสู่ระบบ
               </v-btn>
+              <img
+                src="@/assets/imgs/coin-main-right.svg"
+                class="pt-20"
+                width="100"
+              />
               <v-btn
                 rounded
                 color="lime accent-2  "
@@ -43,6 +48,16 @@
                 สมัครสมาชิก</v-btn
               >
             </div>
+            <v-btn class="green--text text--lighten-2">
+              <img
+                src="@/assets/imgs/coin-main-right.svg"
+                class="pt-20"
+                width="50" />ลงชื่อเข้าใช้ด้วย LINE
+              <img
+                src="@/assets/imgs/coin-main-right.svg"
+                class="pt-20"
+                width="50"
+            /></v-btn>
           </v-row>
         </v-form>
       </v-card>

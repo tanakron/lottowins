@@ -42,7 +42,7 @@ const routes = [
     component: () => import("@/views/dashbord/playlottomain1.vue"),
   },
   {
-    path: "/playlottomain",
+    path: "/playlottomain/",
     name: "Playlottomain",
     component: () => import("@/views/dashbord/playlottomain.vue"),
   },

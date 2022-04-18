@@ -44,6 +44,11 @@
               >
                 เข้าสู่ระบบ
               </v-sheet>
+              <img
+                src="@/assets/imgs/coin-main-right.svg"
+                class="pt-20"
+                width="100"
+              />
             </div>
           </v-row>
           <v-btn
