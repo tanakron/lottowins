@@ -42,6 +42,11 @@ const routes = [
     component: () => import("@/views/dashbord/playlottomain1.vue"),
   },
   {
+    path: "/playlottomaintode",
+    name: "Playlottomaintode",
+    component: () => import("@/views/dashbord/playlottomaintode.vue"),
+  },
+  {
     path: "/playlottomain/",
     name: "Playlottomain",
     component: () => import("@/views/dashbord/playlottomain.vue"),
@@ -87,6 +92,44 @@ const routes = [
     path: "/addbank",
     name: "Addbank",
     component: () => import("@/views/dashbord/addbank.vue"),
+  },
+
+  //หวย แบงค์
+  {
+    path: "/playlottomainbank",
+    name: "playlottomainbank",
+    component: () => import("@/views/dashbordbank/playlottomain.vue"),
+  },
+  {
+    path: "/playlottomain2bank",
+    name: "playlottomain2bank",
+    component: () => import("@/views/dashbordbank/playlottomain2.vue"),
+  },
+  {
+    path: "/playlottomain1bank",
+    name: "playlottomain1bank",
+    component: () => import("@/views/dashbordbank/playlottomain1.vue"),
+  },
+
+  {
+    path: "/playlottomaindownbank",
+    name: "playlottomaindownbank",
+    component: () => import("@/views/dashbordbank/playlottomaindown.vue"),
+  },
+  {
+    path: "/playlottomain1downbank",
+    name: "playlottomain1downbank",
+    component: () => import("@/views/dashbordbank/playlottomain1down.vue"),
+  },
+  {
+    path: "/playlottomain2downbank",
+    name: "playlottomain2downbank",
+    component: () => import("@/views/dashbordbank/playlottomain2down.vue"),
+  },
+  {
+    path: "/playlottomaintodebank",
+    name: "playlottomaintodebank",
+    component: () => import("@/views/dashbordbank/playlottomaintode.vue"),
   },
   // {
   //   path: "/main",

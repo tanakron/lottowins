@@ -4,14 +4,14 @@
     style="max-width: 400px; margin: 50px auto; background: #234"
   >
     <!-- แทง -->
+
     <div
       class="w-full rounded m-1 p-3 text-right lead font-weight-bold text-white bg-vue-dark"
-    >
-      {{ calculatorValue }}
-    </div>
+    ></div>
+
     <v-chip class="ma-2">ระบุตัวเลข{{ bet3 }} </v-chip>
 
-    <v-form>
+    <v-form @submit.prevent="onSubmit()">
       <v-otp-input
         dark
         type="number"
@@ -19,11 +19,23 @@
         height="30"
         width="30"
         class="ma-3 pa-2"
-        v-model="this.calculatorValue"
-        @click:append="this.calculatorValue"
-        @keyup.enter="this.calculatorValue"
+        v-model="addplay.bet1up"
+        @click:append="this.addplay.bet1up"
+        @keyup.enter="this.addplay.bet1up"
       ></v-otp-input>
+      <v-text-field
+        clearable
+        name="betpay"
+        type="number"
+        label="ระบุจำนวนเงิน"
+        :rules="$store.state.betpayRules"
+        v-model.number="addplay.betpay"
+        solo
+      ></v-text-field>
+
+      <v-btn dark color="indigo" type="submit"> ส่งโพย </v-btn>
     </v-form>
+
     <!-- Calculator buttons -->
     <div class="row no-gutters">
       <div class="col-3" v-for="n in calculatorElements" :key="n">
@@ -38,77 +50,67 @@
         </div>
       </div>
     </div>
-    <v-btn class="ma-2" outlined color="indigo"> ส่งโพย </v-btn>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Calculator",
   props: ["bet3"],
   data() {
     return {
+      snackbar: {
+        show: false,
+        text: "บันทึกข้อมูล",
+      },
+      userslog: [],
       newPlay: "",
+      bet1up: "",
+      betpay: "",
+      addplay: {
+        bet1up: "",
+        betpay: "",
+        typeplay: "1ตัวบน",
+        typegame: "หวยรัฐ",
+      },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
       operator: null,
       previousCalculatorValue: "",
-      play: [
-        {
-          id: 1,
-          usersname: "PG501",
-          cadit: "1000",
-          datetime: "",
-          done: false,
-          idplay: new Date(),
-        },
-        {
-          id: 2,
-          usersname: "PG502",
-          cadit: "1000",
-          datetime: "",
-          done: false,
-          idplay: new Date(),
-        },
-        {
-          id: 3,
-          usersname: "PG503",
-          cadit: "1000",
-          datetime: "",
-          done: false,
-          idplay: new Date(),
-        },
-      ],
     };
   },
+  computed: {
+    form() {
+      return {
+        bet1up: this.bet1up,
+        betpay: this.betpay,
+      };
+    },
+  },
   methods: {
+    async onSubmit() {
+      if (this.addplay) {
+      }
+      await axios.post(
+        "http://localhost:3000/postplaylotto/playlotto",
+        this.addplay
+      );
+      this.addplay.bet1up = "";
+      this.addplay.betpay = "";
+      // alert(JSON.stringify(this.addplay));
+      // this.addplay.push(result.data);
+    },
+
     action(n) {
       /* Append value */
       if (!isNaN(n) || n === ".") {
-        this.calculatorValue += n + "";
+        this.addplay.bet1up += n + "";
       }
       /* Clear value */
       if (n === "C") {
-        this.calculatorValue = "";
+        this.addplay.bet1up = "";
       }
-      //   /* Percentage */
-      //   if (n === "%") {
-      //     this.calculatorValue = this.calculatorValue / 100 + "";
-      //   }
-      //   /* Operators */
-      //   if (["/", "*", "-", "+"].includes(n)) {
-      //     this.operator = n;
-      //     this.previousCalculatorValue = this.calculatorValue;
-      //     this.calculatorValue = "";
-      //   }
-      /* Calculate result using the eval function */
-      //   if (n === "=") {
-      //     this.calculatorValue = eval(
-      //       this.previousCalculatorValue + this.operator + this.calculatorValue
-      //     );
-      //     this.previousCalculatorValue = "";
-      //     this.operator = null;
-      //   }
     },
   },
 };

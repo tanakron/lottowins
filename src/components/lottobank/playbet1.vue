@@ -9,25 +9,22 @@
       class="w-full rounded m-1 p-3 text-right lead font-weight-bold text-white bg-vue-dark"
     ></div>
 
-    <v-chip class="ma-2">
-      <link
-        rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
-      />ระบุตัวเลข{{ bet3 }}
-    </v-chip>
+    <v-chip class="ma-2"
+      >ระบุตัวเลข{{ bet3 }}
+      <v-chip color="red">{{ this.addplay.typegame }}</v-chip></v-chip
+    >
 
     <v-form @submit.prevent="onSubmit()">
       <v-otp-input
         dark
         type="number"
-        length="2"
-        name="bet2up"
+        length="1"
         height="30"
         width="30"
         class="ma-3 pa-2"
-        v-model="addplay.bet2up"
-        @click:append="this.addplay.bet2up"
-        @keyup.enter="this.addplay.bet2up"
+        v-model="addplay.bet1up"
+        @click:append="this.addplay.bet1up"
+        @keyup.enter="this.addplay.bet1up"
       ></v-otp-input>
       <v-text-field
         clearable
@@ -39,19 +36,9 @@
         solo
       ></v-text-field>
 
-      <v-btn dark color="indigo" type="submit" @click="snackbar = true">
-        ส่งโพย
-      </v-btn>
+      <v-btn dark color="indigo" type="submit"> ส่งโพย </v-btn>
     </v-form>
-    <v-snackbar v-model="snackbar" :timeout="snackbars.timeout">
-      {{ this.snackbars.text }}
 
-      <template v-slot:action="{ attrs }">
-        <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
     <!-- Calculator buttons -->
     <div class="row no-gutters">
       <div class="col-3" v-for="n in calculatorElements" :key="n">
@@ -76,23 +63,19 @@ export default {
   props: ["bet3"],
   data() {
     return {
-      snackbar: false,
-      snackbars: {
-        text: "บันทึกข้อมูลสำเร็จ",
-        timeout: 800,
+      snackbar: {
+        show: false,
+        text: "บันทึกข้อมูล",
       },
-
       userslog: [],
       newPlay: "",
-      bet2up: "",
+      bet1up: "",
       betpay: "",
       addplay: {
-        id: "1011",
-        bill: Math.ceil(Math.random() * 1000),
-        bet2up: "",
+        bet1up: "",
         betpay: "",
-        typeplay: "3ตัวบน",
-        typegame: "หวยรัฐ",
+        typeplay: "1ตัวบน",
+        typegame: "หวยออมสิน",
       },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -103,7 +86,7 @@ export default {
   computed: {
     form() {
       return {
-        bet2up: this.bet2up,
+        bet1up: this.bet1up,
         betpay: this.betpay,
       };
     },
@@ -116,10 +99,8 @@ export default {
         "http://localhost:3000/postplaylotto/playlotto",
         this.addplay
       );
-      this.addplay.bet2up = "";
+      this.addplay.bet1up = "";
       this.addplay.betpay = "";
-      this.addplay.bill = 0;
-      console.log(this.addplay.bill);
       // alert(JSON.stringify(this.addplay));
       // this.addplay.push(result.data);
     },
@@ -127,11 +108,11 @@ export default {
     action(n) {
       /* Append value */
       if (!isNaN(n) || n === ".") {
-        this.addplay.bet2up += n + "";
+        this.addplay.bet1up += n + "";
       }
       /* Clear value */
       if (n === "C") {
-        this.addplay.bet2up = "";
+        this.addplay.bet1up = "";
       }
     },
   },

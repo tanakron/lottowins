@@ -118,7 +118,7 @@ export default {
   name: "Playlottomain",
   props: ["id"],
   async mounted() {
-    await fetch(`http://localhost:3000/getplaylotto/palyid`)
+    await fetch(`http://localhost:3000/getplaylotto/palyidbank`)
       .then((res) => res.json())
       .then((data) => (this.getplay = data))
       .catch((err) => console.log(err.message));
@@ -177,7 +177,7 @@ export default {
       ],
       desserts: [
         {
-          name: "หวยรัฐ",
+          name: "หวยธนาคาร",
           bet3up: 159,
           row: 1,
           bet2up: 59,
@@ -187,8 +187,8 @@ export default {
   },
   components: {
     Ratlottothai,
-    tabbotton: require("@/components/tabbotton").default,
-    playbet: require("@/components/playbet.vue").default,
+    tabbotton: require("@/components/lottobank/tabbottonbank.vue").default,
+    playbet: require("@/components/lottobank/playbet.vue").default,
   },
   methods: {
     reloadPage() {

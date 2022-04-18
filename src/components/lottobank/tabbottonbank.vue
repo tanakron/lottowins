@@ -2,7 +2,7 @@
   <div class="col">
     <v-card>
       <v-btn
-        @click.prevent="$router.push('/playlottomain')"
+        @click.prevent="$router.push('/playlottomainbank')"
         color="primary"
         elevation="4"
         rounded
@@ -12,7 +12,7 @@
         3ตัวบน</v-btn
       >
       <v-btn
-        @click.prevent="$router.push('/playlottomain2')"
+        @click.prevent="$router.push('/playlottomain2bank')"
         color="primary"
         elevation="4"
         rounded
@@ -21,7 +21,7 @@
         >2ตัวบน</v-btn
       >
       <v-btn
-        @click.prevent="$router.push('/playlottomain1')"
+        @click.prevent="$router.push('/playlottomain1bank')"
         color="primary"
         elevation="4"
         rounded
@@ -30,7 +30,7 @@
         >เลขวิ่งบน</v-btn
       >
       <v-btn
-        @click.prevent="$router.push('/playlottomaindown')"
+        @click.prevent="$router.push('/playlottomaindownbank')"
         color="red"
         elevation="4"
         rounded
@@ -40,7 +40,7 @@
         3ตัวล่าง</v-btn
       >
       <v-btn
-        @click.prevent="$router.push('/playlottomain2down')"
+        @click.prevent="$router.push('/playlottomain2downbank')"
         color="red"
         elevation="4"
         rounded
@@ -49,7 +49,7 @@
         >2ตัวล่าง</v-btn
       >
       <v-btn
-        @click.prevent="$router.push('/playlottomain1down')"
+        @click.prevent="$router.push('/playlottomain1downbank')"
         color="red"
         elevation="4"
         rounded
@@ -58,7 +58,7 @@
         >เลขวิ่งล่าง
       </v-btn>
       <v-btn
-        @click.prevent="$router.push('/playlottomaintode')"
+        @click.prevent="$router.push('/playlottomaintodebank')"
         color="teal darken-4"
         elevation="4"
         rounded

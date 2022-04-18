@@ -20,14 +20,13 @@
       <v-otp-input
         dark
         type="number"
-        length="2"
-        name="bet2up"
+        length="3"
         height="30"
         width="30"
         class="ma-3 pa-2"
-        v-model="addplay.bet2up"
-        @click:append="this.addplay.bet2up"
-        @keyup.enter="this.addplay.bet2up"
+        v-model="addplay.bet3tode"
+        @click:append="this.addplay.bet3tode"
+        @keyup.enter="this.addplay.bet3tode"
       ></v-otp-input>
       <v-text-field
         clearable
@@ -84,14 +83,14 @@ export default {
 
       userslog: [],
       newPlay: "",
-      bet2up: "",
+      bet3tode: "",
       betpay: "",
       addplay: {
         id: "1011",
         bill: Math.ceil(Math.random() * 1000),
-        bet2up: "",
+        bet3tode: "",
         betpay: "",
-        typeplay: "3ตัวบน",
+        typeplay: "3ตัวโต๊ด",
         typegame: "หวยรัฐ",
       },
       calculatorValue: "",
@@ -103,7 +102,7 @@ export default {
   computed: {
     form() {
       return {
-        bet2up: this.bet2up,
+        bet3tode: this.bet3tode,
         betpay: this.betpay,
       };
     },
@@ -113,10 +112,10 @@ export default {
       if (this.addplay) {
       }
       await axios.post(
-        "http://localhost:3000/postplaylotto/playlotto",
+        "http://localhost:3000/postplaylotto/playlottotode",
         this.addplay
       );
-      this.addplay.bet2up = "";
+      this.addplay.bet3tode = "";
       this.addplay.betpay = "";
       this.addplay.bill = 0;
       console.log(this.addplay.bill);
@@ -127,11 +126,11 @@ export default {
     action(n) {
       /* Append value */
       if (!isNaN(n) || n === ".") {
-        this.addplay.bet2up += n + "";
+        this.addplay.bet3tode += n + "";
       }
       /* Clear value */
       if (n === "C") {
-        this.addplay.bet2up = "";
+        this.addplay.bet3tode = "";
       }
     },
   },

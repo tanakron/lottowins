@@ -25,6 +25,9 @@ export default new Vuex.Store({
 
     //play
     sum: [(v1) => !!v1 || " ใส่จำนวนเงิน"],
+    // playbet
+    betpayRules: [(v1) => !!v1 || " ใส่ จำนวนเงิน"],
+
     // login
     usernameRules: [(v1) => !!v1 || " ใส่ username"],
     passwordRules: [(v1) => !!v1 || " ใส่ password"],

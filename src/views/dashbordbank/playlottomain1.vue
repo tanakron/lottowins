@@ -28,8 +28,7 @@
               <v-card width="auto" dark rounded="xl">
                 <v-card dark width="auto" height="auto">
                   <tabbotton />
-
-                  <playbet :bet3="typebet3" />
+                  <playbet1 :bet3="typebet3" />
 
                   <!-- <v-text-field
                       solo
@@ -113,10 +112,9 @@
 <script>
 // import Modal from "@/components/Modal.vue";
 
+import keyboard from "vue-keyboard";
 import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
-  name: "Playlottomain",
-  props: ["id"],
   async mounted() {
     await fetch(`http://localhost:3000/getplaylotto/palyid`)
       .then((res) => res.json())
@@ -125,10 +123,8 @@ export default {
   },
   data() {
     return {
-      result: [],
       getplay: [],
-      datatab: [],
-      typebet3: "3ตัวบน",
+      typebet3: "1ตัวบน",
       calculatorValue: "",
       newPlay: "",
       play: [
@@ -186,9 +182,10 @@ export default {
     };
   },
   components: {
+    keyboard,
     Ratlottothai,
-    tabbotton: require("@/components/tabbotton").default,
-    playbet: require("@/components/playbet.vue").default,
+    tabbotton: require("@/components/lottobank/tabbottonbank.vue").default,
+    playbet1: require("@/components/lottobank/playbet1.vue").default,
   },
   methods: {
     reloadPage() {

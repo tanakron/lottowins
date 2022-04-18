@@ -29,7 +29,7 @@
                 <v-card dark width="auto" height="auto">
                   <tabbotton />
 
-                  <playbet :bet3="typebet3" />
+                  <playlottotode :bet3="typebet3" />
 
                   <!-- <v-text-field
                       solo
@@ -128,7 +128,7 @@ export default {
       result: [],
       getplay: [],
       datatab: [],
-      typebet3: "3ตัวบน",
+      typebet3: "3ตัวโต๊ด",
       calculatorValue: "",
       newPlay: "",
       play: [
@@ -188,7 +188,7 @@ export default {
   components: {
     Ratlottothai,
     tabbotton: require("@/components/tabbotton").default,
-    playbet: require("@/components/playbet.vue").default,
+    playlottotode: require("@/components/playbettode.vue").default,
   },
   methods: {
     reloadPage() {

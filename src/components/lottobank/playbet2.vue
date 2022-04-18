@@ -14,6 +14,7 @@
         rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
       />ระบุตัวเลข{{ bet3 }}
+      <v-chip color="red">{{ this.addplay.typegame }}</v-chip>
     </v-chip>
 
     <v-form @submit.prevent="onSubmit()">
@@ -91,8 +92,8 @@ export default {
         bill: Math.ceil(Math.random() * 1000),
         bet2up: "",
         betpay: "",
-        typeplay: "3ตัวบน",
-        typegame: "หวยรัฐ",
+        typeplay: "2ตัวบน",
+        typegame: "หวยออมสิน",
       },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],

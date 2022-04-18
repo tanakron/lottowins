@@ -14,20 +14,21 @@
         rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
       />ระบุตัวเลข{{ bet3 }}
+      <v-chip color="red">{{ this.addplay.typegame }}</v-chip>
     </v-chip>
 
     <v-form @submit.prevent="onSubmit()">
       <v-otp-input
         dark
         type="number"
-        length="2"
-        name="bet2up"
+        length="3"
+        name="bet3down"
         height="30"
         width="30"
         class="ma-3 pa-2"
-        v-model="addplay.bet2up"
-        @click:append="this.addplay.bet2up"
-        @keyup.enter="this.addplay.bet2up"
+        v-model="addplay.bet3down"
+        @click:append="this.addplay.bet3down"
+        @keyup.enter="this.addplay.bet3down"
       ></v-otp-input>
       <v-text-field
         clearable
@@ -84,14 +85,14 @@ export default {
 
       userslog: [],
       newPlay: "",
-      bet2up: "",
+      bet3down: "",
       betpay: "",
       addplay: {
         id: "1011",
         bill: Math.ceil(Math.random() * 1000),
-        bet2up: "",
+        bet3down: "",
         betpay: "",
-        typeplay: "3ตัวบน",
+        typeplay: "3ตัวล่าง",
         typegame: "หวยรัฐ",
       },
       calculatorValue: "",
@@ -103,7 +104,7 @@ export default {
   computed: {
     form() {
       return {
-        bet2up: this.bet2up,
+        bet3down: this.bet3down,
         betpay: this.betpay,
       };
     },
@@ -113,10 +114,10 @@ export default {
       if (this.addplay) {
       }
       await axios.post(
-        "http://localhost:3000/postplaylotto/playlotto",
+        "http://localhost:3000/postplaylotto/playlottodown",
         this.addplay
       );
-      this.addplay.bet2up = "";
+      this.addplay.bet3down = "";
       this.addplay.betpay = "";
       this.addplay.bill = 0;
       console.log(this.addplay.bill);
@@ -127,11 +128,11 @@ export default {
     action(n) {
       /* Append value */
       if (!isNaN(n) || n === ".") {
-        this.addplay.bet2up += n + "";
+        this.addplay.bet3down += n + "";
       }
       /* Clear value */
       if (n === "C") {
-        this.addplay.bet2up = "";
+        this.addplay.bet3down = "";
       }
     },
   },

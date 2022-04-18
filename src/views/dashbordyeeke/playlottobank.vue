@@ -83,7 +83,6 @@
                       dark
                       large
                       color="blue-grey darken-2"
-                      @click.prevent="$router.push('/playlottomainbank')"
                     >
                       <v-icon dark>add_circle</v-icon>
                     </v-btn>
