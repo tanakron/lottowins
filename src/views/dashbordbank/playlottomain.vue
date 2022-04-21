@@ -27,22 +27,19 @@
             <div class="col-md-6">
               <v-card width="auto" dark rounded="xl">
                 <v-card dark width="auto" height="auto">
-                  <tabbotton />
-
-                  <playbet :bet3="typebet3" />
-
-                  <!-- <v-text-field
-                      solo
-                      class="pa-2"
-                      label="จำนวนเงิน"
-                      value="00.00"
-                      prefix="฿"
-                      type="number"
-                      v-model="sum"
-                      hidden-details
-                      @keyup.enter="sum"
-                      :rules="$store.state.sum"
-                    ></v-text-field> -->
+                  <v-row class="text-center ma-3" justify="space-around">
+                    <v-btn
+                      color="pink"
+                      small
+                      width="150"
+                      @click.prevent="lottoaom = !lottoaom"
+                      >หวยออมสิน</v-btn
+                    >
+                    <div v-show="lottoaom">
+                      <v-icon>unfold_more</v-icon> <tabbottonaom />
+                      <playbetaom />
+                    </div>
+                  </v-row>
                 </v-card>
               </v-card>
             </div>
@@ -51,7 +48,9 @@
               <div class="continer"></div>
               <div class="col-md-8">
                 <v-card width="auto" dark>
-                  <v-btn @click="reloadPage">*คลิก*อัพเดทรายการแทง</v-btn>
+                  <v-btn @click.prevent="reloadPage"
+                    >*คลิก*อัพเดทรายการแทง</v-btn
+                  >
                   <v-simple-table>
                     <template v-slot:default>
                       <thead>
@@ -81,12 +80,8 @@
 
                           <td>
                             {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
                           </td>
                           <td>
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
                             {{ getplays.bet1down }}
                           </td>
                           <td>
@@ -123,6 +118,7 @@ export default {
       .then((data) => (this.getplay = data))
       .catch((err) => console.log(err.message));
   },
+  computed: {},
   data() {
     return {
       result: [],
@@ -131,33 +127,9 @@ export default {
       typebet3: "3ตัวบน",
       calculatorValue: "",
       newPlay: "",
-      play: [
-        // {
-        //   id: 1,
-        //   usersname: "PG501",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 2,
-        //   usersname: "PG502",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 3,
-        //   usersname: "PG503",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-      ],
-
+      play: [],
+      lottoaom: true,
+      lottotks: false,
       alert: false,
       text: "เรท",
       showModal: false,
@@ -187,8 +159,13 @@ export default {
   },
   components: {
     Ratlottothai,
-    tabbotton: require("@/components/lottobank/tabbottonbank.vue").default,
-    playbet: require("@/components/lottobank/playbet.vue").default,
+
+    tabbottonaom: require("@/components/lottobank/tabbottonbank.vue").default,
+    playbetaom: require("@/components/lottobank/playbet.vue").default,
+
+    tabbottontsk: require("@/components/lottobanktks/tabbottonbank.vue")
+      .default,
+    playbettks: require("@/components/lottobanktks/playbet.vue").default,
   },
   methods: {
     reloadPage() {

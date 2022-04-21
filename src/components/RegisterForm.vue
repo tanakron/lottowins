@@ -1,77 +1,66 @@
 <template>
-  <div class="container">
-    <v-card class="d-flex justify-center" dark>
-      <v-card width="600" height="500" :elevation="24" class="ma-3">
-        <v-form>
-          <v-row>
-            <div class="col">
-              <v-icon class="ma-2">person_add_alt</v-icon> ชื่อผู้ใช้
-              <v-text-field
-                label="username"
-                class="ma-2"
-                v-model="username"
-                :rules="$store.state.usernameRules"
-                solo
-              >
-              </v-text-field>
-              <v-icon class="ma-2">vpn_key</v-icon> รหัสผ่าน
-              <v-text-field
-                label="password"
-                class="ma-2"
-                type="text"
-                :rules="$store.state.passwordRules"
-                v-model="password"
-                solo
-              ></v-text-field>
-              <v-icon class="ma-2">add_ic_call</v-icon> เบอร์โทร
-              <v-text-field
-                label="number Tel"
-                class="ma-2"
-                type="password"
-                :rules="$store.state.numberRules"
-                v-model="number"
-                solo
-              ></v-text-field>
-            </div>
-            <div class="col">
-              <v-checkbox
-                v-model="checkbox1"
-                :label="`จำฉันไว้ในระบบ`"
-              ></v-checkbox>
-              <v-sheet
-                class="pl-10 ma-6 primary--text"
-                @click.prevent="$router.push('/')"
-              >
-                เข้าสู่ระบบ
-              </v-sheet>
-              <img
-                src="@/assets/imgs/coin-main-right.svg"
-                class="pt-20"
-                width="100"
-              />
-            </div>
-          </v-row>
-          <v-btn
-            rounded
-            color="success"
-            class="ma-3"
-            @click.prevent="$router.push('/mainuse')"
-            outlined
-            dark
-          >
-            ยืนยันสมัครสมาชิก
-          </v-btn>
-        </v-form>
-      </v-card>
-    </v-card>
-  </div>
+  <v-card dark>
+    <form @submit.prevent="pressed">
+      {{ error.messge }}
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4">
+            Email
+            <input v-model="email" label="E-mail" required />
+          </v-col>
+          <v-col cols="12" md="4">
+            Password
+            <input v-model="password" label="password" required />
+          </v-col>
+        </v-row>
+      </v-container>
+    </form>
+  </v-card>
 </template>
 
 <script>
+import firebase from "@/includes/firebase.js";
 export default {
-  props: ["text"],
   data() {
-    return { checkbox1: true, checkbox2: false };
+    return {
+      email: "",
+      password: "",
+      error: "",
+      valid: false,
+      firstname: "",
+      lastname: "",
+      // nameRules: [
+      //   (v) => !!v || "Name is required",
+      //   (v) => v.length <= 10 || "Name must be less than 10 characters",
+      // ],
+      // email: "",
+      // emailRules: [
+      //   (v) => !!v || "E-mail is required",
+      //   (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      // ],
+    };
+  },
+  methods: {
+    pressed() {
+      try {
+        const user = firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password);
+      } catch (err) {}
+
+      alert("submitted");
+    },
+
+    async register() {
+      try {
+        const userCred = await firebase
+          .auth()
+          .createUserWithEmailAndPassword(values.email, values.password);
+      } catch (error) {
+        this.reg;
+        return;
+      }
+    },
   },
 };
 </script>

@@ -96,7 +96,7 @@ export default {
       if (this.addplay) {
       }
       await axios.post(
-        "http://localhost:3000/postplaylotto/playlotto",
+        "http://localhost:3000/postplaylotto/bankplaylott",
         this.addplay
       );
       this.addplay.bet1up = "";

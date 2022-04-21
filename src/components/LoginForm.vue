@@ -2,74 +2,69 @@
   <div class="container">
     <v-card class="d-flex justify-center" dark rounded="xl">
       <v-card width="600" height="300" :elevation="24" class="ma-3">
-        <v-form>
-          <v-row>
-            <div class="col">
-              <v-icon class="ma-2">person_add_alt</v-icon> ชื่อผู้ใช้
-              <v-text-field
-                label="username"
-                class="ma-2"
-                v-model="username"
-                :rules="$store.state.usernameRules"
-                solo
-              >
-              </v-text-field>
-              <v-icon class="ma-2">vpn_key</v-icon> รหัสผ่าน
-              <v-text-field
-                label="password"
-                class="ma-2"
-                type="password"
-                v-model="password"
-                :rules="$store.state.passwordRules"
-                solo
-              ></v-text-field>
-            </div>
-            <div class="col">
-              <v-checkbox
-                v-model="checkbox1"
-                :label="`จำฉันไว้ในระบบ`"
-              ></v-checkbox>
-              <v-btn rounded color="teal accent-2  " class="ma-2" outlined dark>
-                เข้าสู่ระบบ
-              </v-btn>
-              <img
-                src="@/assets/imgs/coin-main-right.svg"
-                class="pt-20"
-                width="100"
-              />
-              <v-btn
-                rounded
-                color="lime accent-2  "
-                class="ma-2"
-                outlined
-                @click.prevent="$router.push('/RegisterForm')"
-                dark
-              >
-                สมัครสมาชิก</v-btn
-              >
-            </div>
-            <v-btn class="green--text text--lighten-2">
-              <img
-                src="@/assets/imgs/coin-main-right.svg"
-                class="pt-20"
-                width="50" />ลงชื่อเข้าใช้ด้วย LINE
-              <img
-                src="@/assets/imgs/coin-main-right.svg"
-                class="pt-20"
-                width="50"
-            /></v-btn>
-          </v-row>
-        </v-form>
+        <div v-if="!signedIn">
+          <form @submit="form_submit" class="mx-auto">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email (Login)"
+              class="form-control"
+            />
+            <input
+              type="password"
+              name="pswd"
+              placeholder="Password"
+              class="form-control mt-3"
+            />
+            <button class="btn btn-primary mt-3">ส่งข้อมูล</button>
+          </form>
+        </div>
+        <div v-else>
+          <SignedIn />
+        </div>
       </v-card>
     </v-card>
   </div>
 </template>
 
 <script>
+import SignedIn from "@/components/SignedIn.vue";
 export default {
-  props: ["text"],
-  data() {
-    return { checkbox1: true, checkbox2: false };
+  components: {
+    SignedIn,
+  },
+  props: {},
+  methods: {
+    form_submit(event) {
+      //เมื่อส่งข้อมูลจากฟอร์มออกไป
+      event.preventDefault();
+      const fd = new FormData(event.target);
+      const fe = Object.fromEntries(fd.entries());
+      fetch("http://localhost:3000/play/api/session/set", {
+        method: "POST",
+        body: JSON.stringify(fe),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.signedIn) {
+            this.signedIn = result.signedIn;
+          } else {
+            alert("Email หรือ Password ไม่ถูกต้อง");
+          }
+        })
+        .catch((err) => alert(err));
+    },
+    mounted() {
+      fetch("http://localhost:3000/play/api/session/get")
+        .then((response) => response.json())
+        .then((result) => (this.signedIn = result.signedIn))
+        .catch((err) => alert(err));
+    },
+    props: ["text"],
+    data() {
+      return { checkbox1: true, checkbox2: false, signedIn: false };
+    },
   },
 };
 </script>

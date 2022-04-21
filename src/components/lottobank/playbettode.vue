@@ -92,7 +92,7 @@ export default {
         bet3tode: "",
         betpay: "",
         typeplay: "3ตัวโต๊ด",
-        typegame: "หวยรัฐ",
+        typegame: "หวยออมสิน",
       },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -113,7 +113,7 @@ export default {
       if (this.addplay) {
       }
       await axios.post(
-        "http://localhost:3000/postplaylotto/playlottotode",
+        "http://localhost:3000/postplaylotto/bankplaylottotode/",
         this.addplay
       );
       this.addplay.bet3tode = "";

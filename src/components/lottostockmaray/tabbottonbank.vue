@@ -1,0 +1,78 @@
+<template>
+  <div class="col">
+    <v-card>
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maray')"
+        color="primary"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+      >
+        3ตัวบน</v-btn
+      >
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maray2')"
+        color="primary"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+        >2ตัวบน</v-btn
+      >
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maray1')"
+        color="primary"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+        >เลขวิ่งบน</v-btn
+      >
+      <v-btn
+        @click.prevent="$router.push('/playlottomaindownstock_maraydown')"
+        color="red"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+      >
+        3ตัวล่าง</v-btn
+      >
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maraydown2')"
+        color="red"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+        >2ตัวล่าง</v-btn
+      >
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maraydown1')"
+        color="red"
+        elevation="4"
+        rounded
+        small
+        class="ma-2"
+        >เลขวิ่งล่าง
+      </v-btn>
+      <v-btn
+        @click.prevent="$router.push('/playlottomainstock_maraytode')"
+        color="teal darken-4"
+        elevation="4"
+        rounded
+        small
+        dark
+        class="ma-2"
+        >3ตัวโต๊ด
+      </v-btn>
+    </v-card>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style></style>

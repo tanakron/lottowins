@@ -27,21 +27,19 @@
             <div class="col-md-6">
               <v-card width="auto" dark rounded="xl">
                 <v-card dark width="auto" height="auto">
-                  <tabbotton />
-                  <playbet2 :bet3="typebet3" />
-
-                  <!-- <v-text-field
-                      solo
-                      class="pa-2"
-                      label="จำนวนเงิน"
-                      value="00.00"
-                      prefix="฿"
-                      type="number"
-                      v-model="sum"
-                      hidden-details
-                      @keyup.enter="sum"
-                      :rules="$store.state.sum"
-                    ></v-text-field> -->
+                  <v-row class="text-center ma-3" justify="space-around">
+                    <v-btn
+                      color="pink"
+                      small
+                      width="150"
+                      @click.prevent="lottoaom = !lottoaom"
+                      >หวยออมสิน</v-btn
+                    >
+                    <div v-show="lottoaom">
+                      <v-icon>unfold_more</v-icon> <tabbottonaom />
+                      <playbetaom />
+                    </div>
+                  </v-row>
                 </v-card>
               </v-card>
             </div>
@@ -116,7 +114,7 @@ import keyboard from "vue-keyboard";
 import Ratlottothai from "../pagepost/ratlottothai.vue";
 export default {
   async mounted() {
-    await fetch(`http://localhost:3000/getplaylotto/palyid`)
+    await fetch(`http://localhost:3000/getplaylotto/palyidbank`)
       .then((res) => res.json())
       .then((data) => (this.getplay = data))
       .catch((err) => console.log(err.message));
@@ -153,7 +151,8 @@ export default {
         //   idplay: new Date(),
         // },
       ],
-
+      lottoaom: true,
+      lottotks: false,
       alert: false,
       text: "เรท",
       showModal: false,
@@ -184,8 +183,12 @@ export default {
   components: {
     keyboard,
     Ratlottothai,
-    tabbotton: require("@/components/lottobank/tabbottonbank.vue").default,
-    playbet2: require("@/components/lottobank/playbet2.vue").default,
+    tabbottonaom: require("@/components/lottobank/tabbottonbank.vue").default,
+    playbetaom: require("@/components/lottobank/playbet.vue").default,
+
+    tabbottontsk: require("@/components/lottobanktks/tabbottonbank.vue")
+      .default,
+    playbettks: require("@/components/lottobanktks/playbet.vue").default,
   },
   methods: {
     reloadPage() {

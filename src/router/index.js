@@ -2,7 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Main from "../views/pages/main.vue";
 // import Modal from "../components/Modal.vue";
-
+import Login from "../views/pages/login.vue";
+import Secret from "../views/pages/secret.vue";
+import Register from "../views/pages/register.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -11,6 +13,24 @@ const routes = [
     name: "Main",
     component: Main,
   },
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
+  },
+
+  {
+    path: "/register",
+    name: "regiser",
+    component: Register,
+  },
+
+  {
+    path: "/secret",
+    name: "secret",
+    component: Secret,
+  },
+
   {
     path: "/about",
     name: "About",
@@ -94,7 +114,7 @@ const routes = [
     component: () => import("@/views/dashbord/addbank.vue"),
   },
 
-  //หวย แบงค์
+  //หวย แบงค์  ออมสิน
   {
     path: "/playlottomainbank",
     name: "playlottomainbank",
@@ -131,12 +151,145 @@ const routes = [
     name: "playlottomaintodebank",
     component: () => import("@/views/dashbordbank/playlottomaintode.vue"),
   },
-  // {
-  //   path: "/main",
-  //   name: "Main",
+  //หวย แบงค์  ธกส
+  {
+    path: "/playlottomainbank_tks",
+    name: "playlottomaintodebanktks",
+    component: () => import("@/views/dashbordstockmaray/playlottomain.vue"),
+  },
 
-  //   component: () => import("@/views/pages/main.vue"),
-  // },
+  {
+    path: "/playlottomainbank_tks2",
+    name: "playlottomaintodebanktks2",
+    component: () => import("@/views/dashbordstockmaray/playlottomain2.vue"),
+  },
+
+  {
+    path: "/playlottomainbank_tks1",
+    name: "playlottomaintodebanktks1",
+    component: () => import("@/views/dashbordstockmaray/playlottomain1.vue"),
+  },
+
+  ///DOWN
+  {
+    path: "/playlottomaindownbank_tks",
+    name: "playlottomaindownbank_tks",
+    component: () => import("@/views/dashbordstockmaray/playlottomaindown.vue"),
+  },
+
+  {
+    path: "/playlottomainbank_tks2down",
+    name: "playlottomainbank_tks2down",
+    component: () =>
+      import("@/views/dashbordstockmaray/playlottomain2down.vue"),
+  },
+
+  {
+    path: "/playlottomainbank_tks1down",
+    name: "playlottomainbank_tks1down",
+    component: () =>
+      import("@/views/dashbordstockmaray/playlottomain1down.vue"),
+  },
+  ///Tode
+  {
+    path: "/playlottomainbank_tkstode",
+    name: "playlottomainbank_tkstode",
+    component: () => import("@/views/dashbordbank_tks/playlottomaintode.vue"),
+  },
+
+  //หวย หุ้นมาเลย์
+  {
+    path: "/playlottomainstock_maray",
+    name: "playlottomainmaray",
+    component: () => import("@/views/dashbordstockmaray/playlottomain.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_maray2",
+    name: "playlottomaintodemaray2",
+    component: () => import("@/views/dashbordstockmaray/playlottomain2.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_maray1",
+    name: "playlottomaintodemaray1",
+    component: () => import("@/views/dashbordstockmaray/playlottomain1.vue"),
+  },
+
+  ///DOWN
+  {
+    path: "/playlottomaindownstock_maraydown",
+    name: "playlottomaindownstock_maraydown",
+    component: () => import("@/views/dashbordstockmaray/playlottomaindown.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_maraydown2",
+    name: "playlottomainstock_maraydown2",
+    component: () =>
+      import("@/views/dashbordstockmaray/playlottomain2down.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_maraydown1",
+    name: "playlottomainstock_maraydown1",
+    component: () =>
+      import("@/views/dashbordstockmaray/playlottomain1down.vue"),
+  },
+  ///Tode
+  {
+    path: "/playlottomainstock_maraytode",
+    name: "playlottomainstock_maraytode",
+    component: () => import("@/views/dashbordstockmaray/playlottomaintode.vue"),
+  },
+
+  //หวย หุ้นดาวน์โจน์
+  {
+    path: "/playlottomainstock_dowjoe",
+    name: "playlottomaindowjoe",
+    component: () => import("@/views/dashbordstockdowjoe/playlottomain.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_dowjoe2",
+    name: "playlottomaintodedowjoe2",
+    component: () => import("@/views/dashbordstockdowjoe/playlottomain2.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_dowjoe1",
+    name: "playlottomaintodedowjoe1",
+    component: () => import("@/views/dashbordstockdowjoe/playlottomain1.vue"),
+  },
+
+  ///DOWN
+  {
+    path: "/playlottomaindownstock_dowjoedown",
+    name: "playlottomaindownstock_dowjoedown",
+    component: () =>
+      import("@/views/dashbordstockdowjoe/playlottomaindown.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_dowjoedown2",
+    name: "playlottomainstock_dowjoedown2",
+    component: () =>
+      import("@/views/dashbordstockdowjoe/playlottomain2down.vue"),
+  },
+
+  {
+    path: "/playlottomainstock_dowjoedown1",
+    name: "playlottomainstock_dowjoedown1",
+    component: () =>
+      import("@/views/dashbordstockdowjoe/playlottomain1down.vue"),
+  },
+  ///Tode
+  {
+    path: "/playlottomainstock_dowjoetode",
+    name: "playlottomainstock_dowjoetode",
+    component: () =>
+      import("@/views/dashbordstockdowjoe/playlottomaintode.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -137,6 +137,7 @@
                       dark
                       large
                       color="blue-grey darken-2"
+                      @click.prevent="$router.push('/playlottomainbank_tks')"
                     >
                       <v-icon dark>add_circle</v-icon>
                     </v-btn>
@@ -171,6 +172,7 @@ export default {
         { title: "ติดต่อเจ้าหน้าที่", icon: "person_add_alt_1" },
         { title: "ออกจากระบบ", icon: "logout" },
       ],
+      id: "101",
       desserts: [
         {
           name: "ยี่กี VIP",

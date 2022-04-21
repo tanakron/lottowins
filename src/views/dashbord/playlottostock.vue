@@ -81,6 +81,7 @@
                       dark
                       large
                       color="blue-grey darken-2"
+                      @click.prevent="$router.push('/playlottomainstock_maray')"
                     >
                       <v-icon dark>add_circle</v-icon>
                     </v-btn>
@@ -126,7 +127,15 @@
                       width="30"
                       class="ma-1"
                     />หวยหุ้นดาวน์โจน
-                    <v-btn fab dark large color="blue-grey darken-2">
+                    <v-btn
+                      fab
+                      dark
+                      large
+                      color="blue-grey darken-2"
+                      @click.prevent="
+                        $router.push('/playlottomainstock_dowjoe')
+                      "
+                    >
                       <v-icon dark>add_circle</v-icon>
                     </v-btn>
                     <p class="back--text caption">ปิดรับแทง</p>

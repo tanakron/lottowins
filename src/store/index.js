@@ -42,6 +42,7 @@ export default new Vuex.Store({
     isstocklottery: true,
     isstockthailottery: true,
     issLottoyeeke: true,
+    subtext: false,
     //date lotto thai
     datelottothai: "1 เมษายน 2565",
     datestocklottery: moment(new Date()).format("DD / MM / YYYY "),

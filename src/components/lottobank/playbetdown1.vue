@@ -22,6 +22,7 @@
         dark
         type="number"
         length="1"
+        name="bet1down"
         height="30"
         width="30"
         class="ma-3 pa-2"
@@ -92,7 +93,7 @@ export default {
         bet1down: "",
         betpay: "",
         typeplay: "1ตัวล่าง",
-        typegame: "หวยรัฐ",
+        typegame: "หวยออมสิน",
       },
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -113,7 +114,7 @@ export default {
       if (this.addplay) {
       }
       await axios.post(
-        "http://localhost:3000/postplaylotto/playlottodown",
+        "http://localhost:3000/postplaylotto/bankplaylottodown",
         this.addplay
       );
       this.addplay.bet1down = "";

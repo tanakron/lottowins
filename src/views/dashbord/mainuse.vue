@@ -161,12 +161,28 @@
                   large
                   rounded
                   color="amber lighten-1"
-                  @click.prevent="$router.push('/playlottobank')"
+                  @click.prevent="$router.push('/playlottomainbank')"
                 >
                   <img src="@/assets/imgs/aom.png" width="30" />
                 </v-btn>
 
-                <span slot="badge">หวยธนาคาร</span>
+                <span slot="badge">หวยออมสิน</span>
+              </v-badge>
+              <v-badge left color="pink" class="ma-2 pa-2" inline>
+                <v-btn
+                  class="mx-3 white--text"
+                  :id="id"
+                  fab
+                  dark
+                  large
+                  rounded
+                  color="amber lighten-1"
+                  @click.prevent="$router.push('/playlottomainbank_tks')"
+                >
+                  <img src="@/assets/imgs/tks.png" width="30" />
+                </v-btn>
+
+                <span slot="badge">หวยธกส</span>
               </v-badge>
               <v-badge left color="pink" class="ma-2 pa-1" inline>
                 <v-btn
