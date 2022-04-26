@@ -27,7 +27,7 @@
                   height="auto"
                   width="auto"
                   ><v-icon color="teal darken-2" large>face</v-icon>
-                  <h6 class="align-self-sm-center ma-3">id:</h6>
+                  <h6 class="align-self-sm-center ma-3">id: {{ iduser }}</h6>
                   <v-card
                     color="yellow accent-1"
                     v-for="usertestid in $store.state.usertest"
@@ -155,7 +155,6 @@
               <v-badge left color="pink" class="ma-2 pa-2" inline>
                 <v-btn
                   class="mx-3 white--text"
-                  :id="id"
                   fab
                   dark
                   large
@@ -171,7 +170,6 @@
               <v-badge left color="pink" class="ma-2 pa-2" inline>
                 <v-btn
                   class="mx-3 white--text"
-                  :id="id"
                   fab
                   dark
                   large
@@ -564,7 +562,9 @@
       </div>
 
       <v-footer app>
-        <!-- -->
+        <!-- <div v-for="logids in logid" :key="logids">
+       
+        </div> -->
       </v-footer>
     </v-main></v-app
   >
@@ -572,9 +572,26 @@
 
 <script>
 export default {
+  async mounted() {
+    await fetch(`http://localhost:3000/userlog/usersset`)
+      .then((res) => res.json())
+
+      .then((data) => (this.logid = data));
+
+    console.log(logid).catch((err) => console.log(err.message));
+  },
+
   data() {
     return {
-      id: "1011",
+      logid: [],
+      name: "",
+      iduser: this.$cookie.get("id"),
+      register: {
+        email: [],
+        password: [],
+        id: Math.ceil(Math.random() * 10000),
+      },
+
       caditmain: [],
       drawer: null,
       usertest: [],

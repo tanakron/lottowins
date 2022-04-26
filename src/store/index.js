@@ -6,7 +6,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    id: "1011",
     playlotto: [
       {
         usersname: "",

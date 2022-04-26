@@ -5,6 +5,7 @@ import Main from "../views/pages/main.vue";
 import Login from "../views/pages/login.vue";
 import Secret from "../views/pages/secret.vue";
 import Register from "../views/pages/register.vue";
+
 Vue.use(VueRouter);
 
 const routes = [

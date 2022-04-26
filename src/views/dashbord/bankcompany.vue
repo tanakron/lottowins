@@ -19,6 +19,7 @@
               width="auto"
             >
               <v-badge left color="primary">
+                {{ iduser }}
                 <span slot="badge">ฝาก</span>
                 <!--slot can be any component-->
                 <v-icon large color="blue-grey darken-4"

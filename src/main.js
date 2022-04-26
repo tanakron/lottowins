@@ -13,9 +13,11 @@ import axios from "axios";
 
 Vue.component("app-header", Header);
 
+var VueCookie = require("vue-cookie");
+Vue.use(VueCookie);
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
-
+Vue.use(VueCookie);
 const firebaseConfig = {
   apiKey: "AIzaSyAS1rgerKhQwR8PP68UGX46E1fzqpSNGTY",
   authDomain: "lottowins-51744.firebaseapp.com",
@@ -48,5 +50,6 @@ new Vue({
   vuetify,
   router,
   store,
+  VueCookie,
   render: (h) => h(App),
 }).$mount("#app");
