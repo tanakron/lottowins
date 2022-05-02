@@ -28,32 +28,58 @@
                   width="auto"
                   ><v-icon color="teal darken-2" large>face</v-icon>
                   <h6 class="align-self-sm-center ma-3">id: {{ iduser }}</h6>
-                  <v-card
-                    color="yellow accent-1"
-                    v-for="userones in userone"
-                    :key="userones.index"
-                  >
-                    <div v-if="userones.phone === iduser">
-                      <h3 class="d-flex justify-center ma-2">
-                        <v-icon color="teal darken-2" large
-                          >account_balance_wallet</v-icon
-                        >
-                      </h3>
-                      ยอดเงิน :
-                      {{ userones.caditplay - logplay }}
-                    </div>
-                  </v-card>
+                  <h6 class="align-self-sm-center ma-3">
+                    เครดิตคงเหลือ {{ iduser }}
+                  </h6>
                 </v-sheet>
                 <span class="d-flex justify-center ma-4">
-                  <v-btn color="pink darken-1" class="d-block justify-center">
-                    <v-icon color="blue-grey darken-4" class="ml-3"
-                      >emoji_events</v-icon
-                    >
-                    <h3 class="d-block justify-center white--text">
-                      ผลรางวัล
-                    </h3></v-btn
-                  ></span
-                >
+                  <div class="text-center">
+                    <v-dialog v-model="dialog" width="500">
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                          color="pink darken-1"
+                          class="d-block justify-center"
+                          v-bind="attrs"
+                          v-on="on"
+                        >
+                          <v-icon color="blue-grey darken-4" class="ml-3"
+                            >emoji_events</v-icon
+                          >
+                          <h3 class="d-block justify-center white--text">
+                            ผลรางวัล
+                          </h3></v-btn
+                        >
+                      </template>
+
+                      <v-card>
+                        <v-card-title class="text-h5 grey lighten-2">
+                          ผลรางวัล
+                        </v-card-title>
+
+                        <v-card-text>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat. Duis aute irure dolor in
+                          reprehenderit in voluptate velit esse cillum dolore eu
+                          fugiat nulla pariatur. Excepteur sint occaecat
+                          cupidatat non proident, sunt in culpa qui officia
+                          deserunt mollit anim id est laborum.
+                        </v-card-text>
+
+                        <v-divider></v-divider>
+
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="primary" text @click="dialog = false">
+                            ปิด
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-dialog>
+                  </div>
+                </span>
               </v-card>
             </div>
             <!-- เติมเครดิต ฝากถอน -->
@@ -566,6 +592,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      dialog: false,
       logplay: "20",
       userone: [],
       name: "",

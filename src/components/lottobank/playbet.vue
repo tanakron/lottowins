@@ -117,7 +117,7 @@ export default {
         "http://localhost:3000/postplaylotto/bankplaylott",
         this.addplay
       );
-      this.addplay.bet3up = "";
+      this.addplay.bet2up = "";
       this.addplay.betpay = "";
       this.addplay.bill = 0;
       console.log(this.addplay.bill);

@@ -27,32 +27,12 @@
             <div class="col-md-6">
               <v-card width="auto" dark rounded="xl">
                 <v-card dark width="auto" height="auto">
+                  <p class="d-flex justify-center"></p>
                   <tabbotton />
 
                   <playbet :bet3="typebet3" />
                 </v-card>
               </v-card>
-            </div>
-
-            <div class="col-md-6">
-              <div class="continer"></div>
-              <div class="col-md-8">
-                <v-card width="auto" dark>
-                  <v-btn @click="reloadPage">*คลิก*อัพเดทรายการแทง</v-btn>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left">เลข</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr></tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
-                </v-card>
-              </div>
             </div>
           </div>
         </div>
@@ -83,37 +63,13 @@ export default {
       result: [],
       getplay: [],
       datatab: [],
+
+      iduser: this.$cookie.get("id"),
       typebet3: "3ตัวบน",
       calculatorValue: "",
       newPlay: "",
-      play: [
-        // {
-        //   id: 1,
-        //   usersname: "PG501",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 2,
-        //   usersname: "PG502",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 3,
-        //   usersname: "PG503",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-      ],
+      play: [],
 
-      alert: false,
       text: "เรท",
       showModal: false,
       tab: null,

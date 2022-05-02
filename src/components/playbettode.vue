@@ -80,19 +80,20 @@ export default {
         text: "บันทึกข้อมูลสำเร็จ",
         timeout: 800,
       },
-
+      idusers: this.$cookie.get("id"),
       userslog: [],
       newPlay: "",
       bet3tode: "",
       betpay: "",
       addplay: {
-        id: "1011",
+        idusers: this.$cookie.get("id"),
         bill: Math.ceil(Math.random() * 1000),
         bet3tode: "",
         betpay: "",
         typeplay: "3ตัวโต๊ด",
         typegame: "หวยรัฐ",
       },
+
       calculatorValue: "",
       calculatorElements: ["C", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
       operator: null,

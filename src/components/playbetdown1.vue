@@ -80,13 +80,13 @@ export default {
         text: "บันทึกข้อมูลสำเร็จ",
         timeout: 800,
       },
-
+      idusers: this.$cookie.get("id"),
       userslog: [],
       newPlay: "",
       bet1down: "",
       betpay: "",
       addplay: {
-        id: "1011",
+        idusers: this.$cookie.get("id"),
         bill: Math.ceil(Math.random() * 1000),
         bet1down: "",
         betpay: "",

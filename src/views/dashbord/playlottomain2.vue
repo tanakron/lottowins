@@ -29,74 +29,8 @@
                 <v-card dark width="auto" height="auto">
                   <tabbotton />
                   <playbet2 :bet3="typebet3" />
-
-                  <!-- <v-text-field
-                      solo
-                      class="pa-2"
-                      label="จำนวนเงิน"
-                      value="00.00"
-                      prefix="฿"
-                      type="number"
-                      v-model="sum"
-                      hidden-details
-                      @keyup.enter="sum"
-                      :rules="$store.state.sum"
-                    ></v-text-field> -->
                 </v-card>
               </v-card>
-            </div>
-
-            <div class="col-md-6">
-              <div class="continer"></div>
-              <div class="col-md-8">
-                <v-card width="auto" dark>
-                  <v-btn @click="reloadPage">*คลิก*อัพเดทรายการแทง</v-btn>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left">เลข"บน"</th>
-
-                          <th class="text-left">เลข"ล่าง"</th>
-
-                          <th class="text-left">เลข"วิ่ง บน"</th>
-                          <th class="text-left">เลข"วิ่ง ล่าง"</th>
-                          <th class="text-left">เลข"โต๊ด"</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="getplays in getplay" :key="getplays._id">
-                          <td>
-                            {{ getplays.bet3up }}
-                            {{ getplays.bet2up }}
-                            {{ getplays.bet1up }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet3down }}
-                            {{ getplays.bet2down }}
-                            {{ getplays.bet1down }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                          </td>
-                          <td>
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                          </td>
-                          <td>
-                            {{ getplays.bet3tode }}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
-                </v-card>
-              </div>
             </div>
           </div>
         </div>
@@ -127,33 +61,8 @@ export default {
       typebet3: "2ตัวบน",
       calculatorValue: "",
       newPlay: "",
-      play: [
-        // {
-        //   id: 1,
-        //   usersname: "PG501",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 2,
-        //   usersname: "PG502",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-        // {
-        //   id: 3,
-        //   usersname: "PG503",
-        //   cadit: "1000",
-        //   datetime: "",
-        //   done: false,
-        //   idplay: new Date(),
-        // },
-      ],
-
+      play: [],
+      iduser: this.$cookie.get("id"),
       alert: false,
       text: "เรท",
       showModal: false,

@@ -33,59 +33,6 @@
                 </v-card>
               </v-card>
             </div>
-
-            <div class="col-md-6">
-              <div class="continer"></div>
-              <div class="col-md-8">
-                <v-card width="auto" dark>
-                  <v-btn @click="reloadPage">*คลิก*อัพเดทรายการแทง</v-btn>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left">เลข"บน"</th>
-
-                          <th class="text-left">เลข"ล่าง"</th>
-
-                          <th class="text-left">เลข"วิ่ง บน"</th>
-                          <th class="text-left">เลข"วิ่ง ล่าง"</th>
-                          <th class="text-left">เลข"โต๊ด"</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="getplays in getplay" :key="getplays._id">
-                          <td>
-                            {{ getplays.bet3up }}
-                            {{ getplays.bet2up }}
-                            {{ getplays.bet1up }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet3down }}
-                            {{ getplays.bet2down }}
-                            {{ getplays.bet1down }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                          </td>
-                          <td>
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                          </td>
-                          <td>
-                            {{ getplays.bet3tode }}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
-                </v-card>
-              </div>
-            </div>
           </div>
         </div>
       </div>

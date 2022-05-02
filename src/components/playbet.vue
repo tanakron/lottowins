@@ -13,14 +13,13 @@
       <link
         rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
-      />ระบุตัวเลข{{ bet3 }} {}
+      />ระบุตัวเลข{{ bet3 }}
     </v-chip>
 
-    <v-form @submit.prevent="submit()">
+    <v-form @submit.prevent="onSubmit()">
       <v-otp-input
         dark
         type="number"
-        value="123"
         length="3"
         name="bet3up"
         height="30"
@@ -44,6 +43,7 @@
         ส่งโพย
       </v-btn>
     </v-form>
+
     <v-snackbar v-model="snackbar" :timeout="snackbars.timeout">
       {{ this.snackbars.text }}
 
@@ -82,13 +82,13 @@ export default {
         text: "บันทึกข้อมูลสำเร็จ",
         timeout: 800,
       },
-
+      iduser: this.$cookie.get("id"),
       userslog: [],
       newPlay: "",
       bet3up: "",
       betpay: "",
       addplay: {
-        id: "1011",
+        idusers: this.$cookie.get("id"),
         bill: Math.ceil(Math.random() * 1000),
         bet3up: "",
         betpay: "",
@@ -110,13 +110,6 @@ export default {
     },
   },
   methods: {
-    submit() {
-      document.getElementById("palythis").innerHTML = addplay.bet3up;
-      var playbet3up = document.playthis.bet3up.value;
-      var playbetpay = document.playthis.betpay.value;
-      console.log(playbet3up);
-      console.log(playbetpay);
-    },
     async onSubmit() {
       if (this.addplay) {
       }

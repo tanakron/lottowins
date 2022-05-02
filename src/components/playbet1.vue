@@ -64,14 +64,17 @@ export default {
         show: false,
         text: "บันทึกข้อมูล",
       },
+      iduser: this.$cookie.get("id"),
       userslog: [],
       newPlay: "",
       bet1up: "",
       betpay: "",
       addplay: {
+        idusers: this.$cookie.get("id"),
+        bill: Math.ceil(Math.random() * 1000),
         bet1up: "",
         betpay: "",
-        typeplay: "1ตัวบน",
+        typeplay: "3ตัวบน",
         typegame: "หวยรัฐ",
       },
       calculatorValue: "",
@@ -98,6 +101,8 @@ export default {
       );
       this.addplay.bet1up = "";
       this.addplay.betpay = "";
+      this.addplay.bill = 0;
+      console.log(this.addplay.bill);
       // alert(JSON.stringify(this.addplay));
       // this.addplay.push(result.data);
     },
