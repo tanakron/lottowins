@@ -30,22 +30,18 @@
                   <h6 class="align-self-sm-center ma-3">id: {{ iduser }}</h6>
                   <v-card
                     color="yellow accent-1"
-                    v-for="usertestid in $store.state.usertest"
-                    :key="usertestid.index"
+                    v-for="userones in userone"
+                    :key="userones.index"
                   >
-                    <h3 class="d-flex justify-center ma-2">
-                      <v-icon color="teal darken-2" large
-                        >account_balance_wallet</v-icon
-                      >
-                      <!-- <span
-                        v-for="caditmain in $store.state.caditmain"
-                        :key="caditmain.index"
-                      >
-                        {{ caditmain.cadit }}
-                      </span> -->
-                    </h3>
-                    ยอดเงิน :
-                    {{ usertestid.cadit }}
+                    <div v-if="userones.phone === iduser">
+                      <h3 class="d-flex justify-center ma-2">
+                        <v-icon color="teal darken-2" large
+                          >account_balance_wallet</v-icon
+                        >
+                      </h3>
+                      ยอดเงิน :
+                      {{ userones.caditplay - logplay }}
+                    </div>
                   </v-card>
                 </v-sheet>
                 <span class="d-flex justify-center ma-4">
@@ -75,7 +71,7 @@
                   height="auto"
                   width="auto"
                 >
-                  <v-badge left color="primary">
+                  <v-badge left color="primary" class="pa-5">
                     <span slot="badge">ฝากถอน</span>
                     <!--slot can be any component-->
                     <v-icon large color="blue-grey darken-4"
@@ -260,14 +256,14 @@
                         <th class="text-left">2ตัวล่าง</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr v-for="item in desserts" :key="item.name">
+                    <tbody v-for="item in $store.state.use_id" :key="item.name">
+                      <tr v-if="item.phone === iduser">
                         <td>
                           <v-icon color="primary">stars</v-icon> {{ item.name }}
                         </td>
-                        <td>{{ item.row }}</td>
-                        <td>{{ item.bet3up }}</td>
-                        <td>{{ item.bet2up }}</td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.first_name }}</td>
+                        <td>{{ item.last_name }}</td>
                       </tr>
                     </tbody>
                   </template>
@@ -561,29 +557,17 @@
         </div>
       </div>
 
-      <v-footer app>
-        <!-- <div v-for="logids in logid" :key="logids">
-       
-        </div> -->
-      </v-footer>
-    </v-main></v-app
-  >
+      <v-footer app> </v-footer> </v-main
+  ></v-app>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  async mounted() {
-    await fetch(`http://localhost:3000/userlog/usersset`)
-      .then((res) => res.json())
-
-      .then((data) => (this.logid = data));
-
-    console.log(logid).catch((err) => console.log(err.message));
-  },
-
   data() {
     return {
-      logid: [],
+      logplay: "20",
+      userone: [],
       name: "",
       iduser: this.$cookie.get("id"),
       register: {
@@ -612,6 +596,13 @@ export default {
       ],
     };
   },
+
+  async mounted() {
+    await axios.get("http://localhost:3000/userlog/usersset").then((res) => {
+      this.userone = res.data;
+    });
+  },
+
   components: {
     // manuusers: require("@/components/manuusers").default,
     // tablotto: require("@/views/pages/tablottouser.vue").default,

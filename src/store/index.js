@@ -1,11 +1,22 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import moment from "moment";
-
+import axios from "axios";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    use_id: [],
+    logplay: [
+      {
+        id: "05511logplay",
+        userid: "",
+        caditplay: "1000",
+        phone: "05151551",
+        done: false,
+        idplay: new Date(),
+      },
+    ],
     playlotto: [
       {
         usersname: "",

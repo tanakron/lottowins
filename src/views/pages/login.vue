@@ -8,7 +8,7 @@
             <form @submit.prevent="onSubmit()">
               phone
               <v-text-field
-                v-model="this.phone"
+                v-model="register.phone"
                 label="phone"
                 name="phone"
                 type="text"
@@ -30,25 +30,6 @@
 
           <p v-for="item in emp" :key="item.index">{{ item }}</p>
         </v-row>
-        <!-- <template>
-          <v-simple-table>
-            <template v-slot:default>
-              <thead>
-                <tr>
-                  <th class="text-left">Name</th>
-                  <th class="text-left">Calories</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in getplay" :key="item.index">
-                  <td>{{ item.email }}</td>
-                  <td>{{ item.id }}</td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-        </template> -->
-        <!-- <div v-for="newTask in value" :key="newTask"></div> -->
       </v-card>
       <v-card> </v-card>
     </v-row>
@@ -70,7 +51,7 @@ export default {
       emp: [],
       iduser: [],
       register: {
-        email: "eamil",
+        phone: "",
         password: [],
         id: "101",
         phone: "",
@@ -90,10 +71,12 @@ export default {
       // this.$router.push({ name: "Mainuse" });
       // db.collection("iduser").add(this.register).this();
       // this.$router.push({ name: "Mainuse" });
-      await axios.post("http://localhost:3000/userlog/test", this.getplay);
 
-      // this.register.email = "";
-      // this.register.password = "";
+      this.$cookie.set("id", this.register.phone, 1);
+
+      this.$router.push({ name: "Mainuse" });
+      this.register.phone = "";
+      this.register.password = "";
     },
   },
 };

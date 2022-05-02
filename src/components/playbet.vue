@@ -13,13 +13,14 @@
       <link
         rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
-      />ระบุตัวเลข{{ bet3 }}
+      />ระบุตัวเลข{{ bet3 }} {}
     </v-chip>
 
-    <v-form @submit.prevent="onSubmit()">
+    <v-form @submit.prevent="submit()">
       <v-otp-input
         dark
         type="number"
+        value="123"
         length="3"
         name="bet3up"
         height="30"
@@ -109,6 +110,13 @@ export default {
     },
   },
   methods: {
+    submit() {
+      document.getElementById("palythis").innerHTML = addplay.bet3up;
+      var playbet3up = document.playthis.bet3up.value;
+      var playbetpay = document.playthis.betpay.value;
+      console.log(playbet3up);
+      console.log(playbetpay);
+    },
     async onSubmit() {
       if (this.addplay) {
       }

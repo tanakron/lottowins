@@ -30,19 +30,6 @@
                   <tabbotton />
 
                   <playbet :bet3="typebet3" />
-
-                  <!-- <v-text-field
-                      solo
-                      class="pa-2"
-                      label="จำนวนเงิน"
-                      value="00.00"
-                      prefix="฿"
-                      type="number"
-                      v-model="sum"
-                      hidden-details
-                      @keyup.enter="sum"
-                      :rules="$store.state.sum"
-                    ></v-text-field> -->
                 </v-card>
               </v-card>
             </div>
@@ -56,43 +43,11 @@
                     <template v-slot:default>
                       <thead>
                         <tr>
-                          <th class="text-left">เลข"บน"</th>
-
-                          <th class="text-left">เลข"ล่าง"</th>
-
-                          <th class="text-left">เลข"วิ่ง บน"</th>
-                          <th class="text-left">เลข"วิ่ง ล่าง"</th>
-                          <th class="text-left">เลข"โต๊ด"</th>
+                          <th class="text-left">เลข</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr v-for="getplays in getplay" :key="getplays._id">
-                          <td>
-                            {{ getplays.bet3up }}
-                            {{ getplays.bet2up }}
-                            {{ getplays.bet1up }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet3down }}
-                            {{ getplays.bet2down }}
-                            {{ getplays.bet1down }}
-                          </td>
-
-                          <td>
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                            {{ getplays.bet1up }}
-                          </td>
-                          <td>
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                            {{ getplays.bet1down }}
-                          </td>
-                          <td>
-                            {{ getplays.bet3tode }}
-                          </td>
-                        </tr>
+                        <tr></tr>
                       </tbody>
                     </template>
                   </v-simple-table>
@@ -190,6 +145,7 @@ export default {
     tabbotton: require("@/components/tabbotton").default,
     playbet: require("@/components/playbet.vue").default,
   },
+
   methods: {
     reloadPage() {
       window.location.reload();
