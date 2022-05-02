@@ -6,12 +6,12 @@
           <div class="col-md-3"></div>
           <div class="col-md-6 d-lg-inline justify-center wrap">
             <form @submit.prevent="onSubmit()">
-              phone
+              email
               <v-text-field
-                v-model="register.phone"
-                label="phone"
-                name="phone"
-                type="text"
+                v-model="register.email"
+                label="email"
+                name="email"
+                type="email"
                 required
               ></v-text-field>
 
@@ -27,65 +27,36 @@
               <button type="submit">เข้าสู่ระบบ</button>
             </form>
           </div>
-
-          <p v-for="item in emp" :key="item.index">{{ item }}</p>
+          <div class="col-md-6"></div>
         </v-row>
       </v-card>
-      <v-card> </v-card>
     </v-row>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Localbase from "localbase";
-let db = new Localbase("db");
 
 // import firebase from "firebase";
 // require("firebase/auth");
 export default {
   data() {
     return {
-      abc: [],
-      getplay: [],
-      emp: [],
-      iduser: [],
       register: {
-        phone: "",
-        password: [],
-        id: "101",
-        phone: "",
-        // id: Math.ceil(Math.random() * 10000),
+        email: "",
+        password: "",
+        id: Math.ceil(Math.random() * 10000),
       },
     };
   },
-  async mounted() {
-    await db
-      .collection("iduser")
-      .get()
-      .then((data) => (this.getplay = data));
-  },
   methods: {
     async onSubmit() {
-<<<<<<< Updated upstream
-      // this.$cookie.set("id", this.register.phone, 1);
-      // this.$router.push({ name: "Mainuse" });
-      // db.collection("iduser").add(this.register).this();
-      // this.$router.push({ name: "Mainuse" });
-
-      this.$cookie.set("id", this.register.phone, 1);
-
-      this.$router.push({ name: "Mainuse" });
-      this.register.phone = "";
-      this.register.password = "";
-=======
       if (this.register) {
         await axios.post("http://localhost:3000/userlog/login", this.register);
-        
+
         this.register.email = "";
         this.register.password = "";
       }
->>>>>>> Stashed changes
     },
   },
 };
