@@ -67,6 +67,7 @@ export default {
   },
   methods: {
     async onSubmit() {
+<<<<<<< Updated upstream
       // this.$cookie.set("id", this.register.phone, 1);
       // this.$router.push({ name: "Mainuse" });
       // db.collection("iduser").add(this.register).this();
@@ -77,6 +78,14 @@ export default {
       this.$router.push({ name: "Mainuse" });
       this.register.phone = "";
       this.register.password = "";
+=======
+      if (this.register) {
+        await axios.post("http://localhost:3000/userlog/login", this.register);
+        
+        this.register.email = "";
+        this.register.password = "";
+      }
+>>>>>>> Stashed changes
     },
   },
 };
